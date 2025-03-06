@@ -1,0 +1,48 @@
+<script>
+
+// getUsuageCookieValue reads the cookies_policy cookie and returns the value a user has set for usage, 
+// or defaults to true to opt_out of usage cookie if no cookie is set, or theres an error getting the value
+function getUsageCookieValue() {
+    var cookiesPolicyCookie = document.cookie.match('(^|;) ?cookies_policy=([^;]*)(;|$)');
+    if (cookiesPolicyCookie) {
+        var decodedCookie = decodeURIComponent(cookiesPolicyCookie[2])
+        var cookieValue = JSON.parse(decodedCookie)
+        return !cookieValue.usage
+    }
+    return true
+}
+
+// unescape html entities
+function htmlUnescape(str){
+    return str.replace(/&#x3D;/g, "=");
+}
+
+dataLayer = [{
+    "analyticsOptOut": getUsageCookieValue(),
+    "gtm.whitelist": ["google","hjtc","lcl"],
+    "gtm.blacklist": ["customScripts","sp","adm","awct","k","d","j"],
+    {{if .DatasetTitle }}
+        "contentTitle": htmlUnescape({{.DatasetTitle}}),
+        "filterTitle": htmlUnescape({{.Metadata.Title}}),
+    {{else}}
+        "contentTitle": htmlUnescape({{.Metadata.Title}}),
+    {{end}}
+    {{if .ReleaseDate }}
+        "releaseDate": {{dateFormatYYYYMMDD .ReleaseDate}},
+    {{end}}
+    {{ if eq .Type "search" }}
+        "numberOfResults": {{.Count}},
+        "resultsPage": {{.Pagination.CurrentPage}},
+    {{ end }}
+    {{ if .ABTest.GTMKey }}
+        "abTest": {{ .ABTest.GTMKey }},
+    {{ end }}
+    {{ if .Type }}
+        "contentType": {{ .Type }},
+    {{ end }}
+    {{ if .DatasetId }}
+        "datasetID": {{ .DatasetId }},
+    {{ end }}
+}];
+
+</script>

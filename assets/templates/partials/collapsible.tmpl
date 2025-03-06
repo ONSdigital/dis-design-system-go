@@ -1,0 +1,22 @@
+{{/* See PATTERNS.md for usage instructions */}}
+<details class="ons-collapsible ons-js-collapsible">
+    <summary class="ons-collapsible__heading ons-js-collapsible-heading">
+        <h3 class="ons-collapsible__title">
+            {{- .Title.FuncLocalise .Language -}}
+        </h3>
+        {{ template "icons/collapsible" }}
+    </summary>
+    <div class="ons-collapsible__content ons-js-collapsible-content">
+        {{ range .CollapsibleItems }}
+            {{ if .Subheading }}
+                <h4>{{- .Subheading -}}</h4>
+            {{ end }}
+            {{ if .SafeHTML }}
+                {{- .SafeHTML.FuncLocalise $.Language | safeHTML -}}
+            {{ end }}
+            {{ range .Content }}
+                <p>{{- . -}}</p>
+            {{ end }}
+        {{ end }}
+    </div>
+</details>

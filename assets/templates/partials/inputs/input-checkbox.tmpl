@@ -1,0 +1,29 @@
+{{/* Use model.Input for model binding */}}
+<input
+  type="checkbox"
+  id="{{- .ID -}}"
+  class="ons-checkbox__input ons-js-checkbox"
+  name="{{- .Name -}}"
+  value="{{- .Value -}}"
+  {{ if .IsChecked }}
+  checked
+  {{ end }}
+  {{ if .IsDisabled }}
+  disabled
+  {{ end }}
+  {{ if .IsRequired }}
+  required
+  {{ end }}
+  {{ if .DataAttributes }}
+  {{ range .DataAttributes }}
+  data-{{- .Key -}}="{{- .Value.FuncLocalise $.Language -}}"
+  {{ end }}
+  {{ end }}
+>
+<label
+  class="ons-checkbox__label"
+  for="{{- .ID -}}"
+  id="{{- .ID -}}-label"
+>
+  {{- .Label.FuncLocalise .Language -}}
+</label>

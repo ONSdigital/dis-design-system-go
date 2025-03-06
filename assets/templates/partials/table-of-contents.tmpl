@@ -1,0 +1,32 @@
+{{/* See PATTERNS.md for usage instructions */}}
+
+<aside
+  {{ if .TableOfContents.Id }}id="{{ .TableOfContents.Id }}"{{ end }}
+  class="ons-toc-container"
+  role="complementary"
+>
+  <nav
+    class="ons-toc"
+    aria-label="{{ .TableOfContents.AriaLabel.FuncLocalise .Language }}"
+  >
+    <h2 class="ons-toc__title ons-u-fs-r--b ons-u-mb-s">
+      {{- .TableOfContents.Title.FuncLocalise .Language -}}
+    </h2>
+    <ol class="ons-list ons-u-mb-m ons-list--dashed">
+      {{ $sections := .TableOfContents.Sections }}
+      {{ range $id := .TableOfContents.DisplayOrder }}
+        {{ $section := index $sections $id }}
+        <li
+          class="ons-list__item"
+          {{ if $section.Current }}
+            aria-current="true"
+          {{ end }}
+        >
+          <a href="#{{ $id }}" class="ons-list__link">
+            {{- $section.Title.FuncLocalise $.Language -}}
+          </a>
+        </li>
+      {{ end }}
+    </ol>
+  </nav>
+</aside>
