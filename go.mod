@@ -1,6 +1,6 @@
 module github.com/ONSdigital/dis-design-system-go
 
-go 1.24.1
+go 1.24
 
 require github.com/smartystreets/goconvey v1.8.1
 
