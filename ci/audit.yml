@@ -1,0 +1,15 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: onsdigital/dp-concourse-tools-nancy
+    tag: latest
+
+inputs:
+  - name: dis-design-system-go
+    path: dis-design-system-go
+
+run:
+  path: dis-design-system-go/ci/scripts/audit.sh

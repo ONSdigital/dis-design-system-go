@@ -1,0 +1,21 @@
+---
+
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: golang
+    tag: latest
+
+inputs:
+  - name: dis-design-system-go
+
+outputs:
+  - name: build
+
+caches:
+  - path: go/
+
+run:
+  path: dis-design-system-go/ci/scripts/build.sh
