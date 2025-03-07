@@ -4,7 +4,7 @@ import (
 	"html/template"
 	"testing"
 
-	"github.com/ONSdigital/dp-renderer/v2/helper"
+	"github.com/ONSdigital/dis-design-system-go/helper"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

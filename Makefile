@@ -37,7 +37,7 @@ lint-local: ## Use locally to run linters against Go code
 
 .PHONY: test
 test: ## Runs unit tests including checks for race conditions and returns coverage
-	go test -race -cover ./...
+	go test -race -cover -tags 'production' ./...
 
 .PHONY: help
 help: ## Show help page for list of make targets

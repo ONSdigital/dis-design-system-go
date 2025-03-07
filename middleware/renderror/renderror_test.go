@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	render "github.com/ONSdigital/dp-renderer/v2"
+	render "github.com/ONSdigital/dis-design-system-go"
 	"github.com/gorilla/mux"
 	"github.com/justinas/alice"
 	. "github.com/smartystreets/goconvey/convey"

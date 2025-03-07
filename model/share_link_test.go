@@ -4,7 +4,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/ONSdigital/dp-renderer/v2/model"
+	"github.com/ONSdigital/dis-design-system-go/model"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
