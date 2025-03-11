@@ -10,3 +10,7 @@
 .idea/
 *.iml
 *.iws
+
+# Project
+dist/
+node_modules/
