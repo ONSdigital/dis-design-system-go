@@ -1,0 +1,75 @@
+.improve-this-page {
+  &__prompt {
+    background-color: $astral;
+    color: $white;
+    padding: 10px 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint(sm) {
+      flex-wrap: wrap;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: 1.25rem;
+    }
+
+    a {
+      color: $white;
+      display: inline-block;
+    }
+  }
+
+  &__prompt_left {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding-right: 2rem;
+
+    @include breakpoint(sm) {
+      padding: 0;
+    }
+
+    a {
+      white-space: nowrap;
+    }
+  }
+
+  &__prompt_right {
+    padding-left: 2rem;
+
+    @include breakpoint(sm) {
+      padding: 0;
+      margin: $col 0 $baseline 0;
+    }
+  }
+
+  &__form {
+    padding-top: 1rem;
+    border-top: 10px solid $astral;
+  }
+
+  &__is-useful-question {
+    font-weight: 700;
+    text-transform: none;
+    display: inline;
+  }
+
+  &__page-is-useful-button {
+    margin-right: 0.2em;
+  }
+
+  & #form-validation-panel {
+    margin-top: 0 !important;
+  }
+}
+
+#feedback-form-close {
+  &:hover {
+    color: $white;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,55 @@
+.timeseries__list-container {
+  position: absolute;
+  top: 250px;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  border: none;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 7px 0 #000;
+
+  @include breakpoint(md) {
+    width:500px;
+  }
+}
+
+.timeseries__inner {
+  padding: 1rem;
+}
+
+.timeseries__list--exit {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index:50;
+  padding: 1rem;
+}
+
+.d-flex { 
+  display: flex;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.timeseries__list {
+  max-height: 464px;
+  overflow-x: hidden;
+}
+
+.list--neutral {
+  list-style: none;
+  padding-left: 0
+
+}
+
+.timeseries__remember {
+  display: none;
+  border-bottom: 1px solid #d0d2d3;
+}
+
+.timeseries__download {
+  display: none;
+}
