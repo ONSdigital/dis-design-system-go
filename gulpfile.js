@@ -18,15 +18,15 @@ const OUTPUT_DIRECTORY = "./dist/assets";
 // Two import files required as the design system's 'main.js' is compiled and produces numerous errors during re-bundling
 const scripts = [
   {
-    entryPoint: ["./src/js/import-ds.js", "./src/js/main.js"],
+    entryPoint: ["./assets/js/import-ds.js", "./assets/js/main.js"],
     outputFile: "main.js",
     config: babelEsmConfig,
   },
   {
     entryPoint: [
-      "./src/js/import-ds.es5.js",
-      "./src/js/polyfills.js",
-      "./src/js/main.js",
+      "./assets/js/import-ds.es5.js",
+      "./assets/js/polyfills.js",
+      "./assets/js/main.js",
     ],
     outputFile: "main.es5.js",
     config: babelNomoduleConfig,
@@ -70,7 +70,7 @@ gulp.task("copy-static-assets-from-design-system", () => {
 
 gulp.task("build-styles", () => {
   return gulp
-    .src("./src/scss/*.scss")
+    .src("./assets/scss/*.scss")
     .pipe(sass({outputStyle: isProduction ? "compressed" : "expanded"}).on('error', sass.logError))
     .pipe(gulp.dest("./dist/assets/css"));
 });
@@ -78,8 +78,8 @@ gulp.task("build-styles", () => {
 gulp.task("build-script", gulp.series(...scripts.map(createBuildScriptTask)));
 
 gulp.task("watch-and-build", async () => {
-  gulp.watch("./src/js/**", gulp.series("build-script"));
-  gulp.watch("./src/scss/**/*.scss", gulp.series("build-styles"));
+  gulp.watch("./assets/js/**", gulp.series("build-script"));
+  gulp.watch("./assets/scss/**/*.scss", gulp.series("build-styles"));
 });
 
 gulp.task(
