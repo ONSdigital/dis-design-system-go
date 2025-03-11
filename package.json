@@ -1,7 +1,7 @@
 {
-  "name": "dp-design-system",
-  "version": "2.0.0",
-  "description": "Digital Publishing (ONS) Design System",
+  "name": "dis-design-system-go",
+  "version": "0.1.0",
+  "description": "Dissemination (ONS) Design System",
   "main": "",
   "scripts": {
     "preinstall": "npx --yes npm-force-resolutions",
@@ -24,14 +24,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ONSdigital/dp-design-system.git"
+    "url": "git+https://github.com/ONSdigital/dis-design-system-go.git"
   },
-  "author": "Digital Publishing (ONS)",
+  "author": "Dissemination (ONS)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ONSdigital/dp-design-system/issues"
+    "url": "https://github.com/ONSdigital/dis-design-system-go/issues"
   },
-  "homepage": "https://github.com/ONSdigital/dp-design-system#readme",
+  "homepage": "https://github.com/ONSdigital/dis-design-system-go#readme",
   "dependencies": {
     "@ons/design-system": "^57.0.1",
     "abortcontroller-polyfill": "^1.7.5",
