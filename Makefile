@@ -64,7 +64,7 @@ fmt: ## Run Go formatting on code
 	go fmt ./...
 
 .PHONY: lint
-lint: 
+lint: ## Exit as testing CI integration; not required for POC
 	exit
 
 .PHONY: lint-go
