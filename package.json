@@ -40,7 +40,7 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-cli": "^2.3.0",
-    "local-web-server": "^5.3.0",
+    "local-web-server": "^5.4.0",
     "mdn-polyfills": "^5.20.0",
     "regenerator-runtime": "^0.14.0",
     "sass": "^1.66.1",
@@ -75,8 +75,10 @@
     "glob-parent": "^6.0.2",
     "semver": "7.5.2",
     "@koa/cors": "^5.0.0",
+    "koa": "^2.16.0",
     "es5-ext": "^0.10.63",
     "braces": "^3.0.3",
+    "brace-expansion": "^1.1.12",
     "micromatch": "^4.0.6",
     "path-to-regexp": ">=6.3.0"
   }
