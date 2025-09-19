@@ -24,12 +24,8 @@ For `dis-design-system-go` to work correctly, we use `go-bindata` to generate a 
 
 Update the frontend service's `Makefile` with the following new commands so that `go-bindata` will generate this file:
 
-:warning: The `APP_RENDERER_VERSION` is unlikely to have been set previously :warning:
-
 ```Makefile
 LOCAL_RENDERER_IN_USE = $(shell grep -c "\"github.com/ONSdigital/dis-design-system-go\" =" go.mod)
-
-APP_RENDERER_VERSION=$(APP_RENDERER_VERSION)
 
 .PHONY: fetch-renderer
 fetch-renderer:
@@ -53,9 +49,9 @@ generate-prod: fetch-renderer
  mv assets/data.go.new assets/data.go
 ```
 
-Due to having distributed assets that are combined with `go-bindata`, we require the `get-renderer-version` and `fetch-renderer-version` tasks to ensure the version of `dp-renderer` as specified in `go.mod` is used.
+Due to having distributed assets that are combined with `go-bindata`, we require the `fetch-renderer` task to ensure the version of `dis-design-system-go` is as specified in `go.mod` is used.
 
-The existing `build` and `debug` tasks should then be updated to use the relevant `generate-` command as a prerequisite:
+The `build` and `debug` tasks should use the relevant `generate-` command as a prerequisite:
 
 ```Makefile
 .PHONY: build
@@ -66,8 +62,6 @@ debug: generate-debug
 ```
 
 ## Config
-
-:warning: The `RendererVersion` is unlikely to have been set previously :warning:
 
 `config.go` should be updated to include four properties: `PatternLibraryAssetsPath`, `SiteDomain`, `Debug` and `RendererVersion`.
 
@@ -128,7 +122,7 @@ func get() (*Config, error) {
 
 You will need the `RenderClient` interface in order to implement the methods that `dis-design-system-go` exposes.
 
-```golang
+```go
 type RenderClient interface {
   BuildPage(w io.Writer, pageModel interface{}, templateName string)
   NewBasePageModel() model.Page
@@ -139,7 +133,7 @@ type RenderClient interface {
 
 Example handler:
 
-```golang
+```go
 func getCookiePreferencePage(w http.ResponseWriter, rendC RenderClient, cp cookies.Policy, isUpdated bool, lang string) {
   // create a new base page model that inject SiteDomain and PatternLibraryAssetsPath into the page struct
   basePage := rendC.NewBasePageModel()
@@ -149,13 +143,14 @@ func getCookiePreferencePage(w http.ResponseWriter, rendC RenderClient, cp cooki
 
   // send the mapped data, with ResponseWriter and template name defined by the actual template file name (e.g. cookies-preferences.tmpl) to the render lib
   rendC.BuildPage(w, m, "cookies-preferences")
+}
 ```
 
 ## Mappers
 
 Example mapper:
 
-```golang
+```go
 import (
   "dp-frontend-cookie-controller/model"
 
@@ -172,11 +167,11 @@ func CreateCookieSettingPage(basePage core.Page, policy cookies.Policy, isUpdate
 }
 ```
 
-### Rendering error pages
+## Rendering error pages
 
-We use a HTTP middleware handler to intercept error status in our controllers then call `BuildErrorPage` to render an error page. To set up the middleware we use [Alice](https://github.com/justinas/alice) when instantiating the router in our controllers. See [README](/README.md#instantiation) for setting up the render client that we pass to the middleware.
+We use a HTTP middleware handler to intercept error status in our controllers then call `BuildErrorPage` to render an error page. To set up the middleware we use [Alice](https://github.com/justinas/alice) when instantiating the router in our controllers.
 
-```golang
+```go
 import "github.com/ONSdigital/dis-design-system-go/middleware/renderror"
 
 middleware := []alice.Constructor{
