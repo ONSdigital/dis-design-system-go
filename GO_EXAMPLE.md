@@ -56,7 +56,11 @@ Due to having distributed assets that are combined with `go-bindata`, we require
 The `build` and `debug` tasks should use the relevant `generate-` command as a prerequisite
 
 ```makefile
-::::::
+.PHONY: generate-prod
+generate-prod: fetch-renderer
+ cd assets; go run github.com/kevinburke/go-bindata/go-bindata -prefix $(CORE_ASSETS_PATH)/assets -o data.go -pkg assets locales/... templates/... $(CORE_ASSETS_PATH)/assets/locales/... $(CORE_ASSETS_PATH)/assets/templates/...
+ { echo "// +build production\n"; cat assets/data.go; } > assets/data.go.new
+ mv assets/data.go.new assets/data.go
 ```
 
 ## Config
