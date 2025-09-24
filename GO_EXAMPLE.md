@@ -56,9 +56,10 @@ The `build` and `debug` tasks should use the relevant `generate-` command as a p
 ```Makefile
 .PHONY: build
 build: generate-prod
-
+  # do something else
 .PHONY: debug
 debug: generate-debug
+  # do something
 ```
 
 ## Config
