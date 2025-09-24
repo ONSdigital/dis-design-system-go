@@ -49,6 +49,8 @@ generate-prod: fetch-renderer
  mv assets/data.go.new assets/data.go
 ```
 
+## Config again
+
 Due to having distributed assets that are combined with `go-bindata`, we require the `fetch-renderer` task to ensure the version of `dis-design-system-go` is as specified in `go.mod` is used.
 
 The `build` and `debug` tasks should use the relevant `generate-` command as a prerequisite:
