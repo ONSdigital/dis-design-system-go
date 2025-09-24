@@ -53,7 +53,7 @@ Due to having distributed assets that are combined with `go-bindata`, we require
 
 The `build` and `debug` tasks should use the relevant `generate-` command as a prerequisite:
 
-```sh
+```makefile
 :
 ```
 
