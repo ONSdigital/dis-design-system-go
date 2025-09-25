@@ -46,6 +46,8 @@ To run some of our tests you will need additional tooling:
 
 We use `dis-vulncheck` to do auditing, which you will [need to install](https://github.com/ONSdigital/dis-vulncheck).
 
+For Javascript auditing we use `auditjs` which requires you to [setup an OSS Index account](https://github.com/ONSdigital/dp/blob/main/guides/MAC_SETUP.md#oss-index-account-and-configuration)
+
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md) for details.
