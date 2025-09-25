@@ -27,7 +27,7 @@ audit: audit-go audit-node
 
 .PHONY: audit-go
 audit-go: ## Runs checks for security vulnerabilities on dependencies (including transient ones)
-	go list -json -m all | nancy sleuth
+	dis-vulncheck
 
 .PHONY: audit-node
 audit-node: 

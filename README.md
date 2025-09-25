@@ -38,6 +38,14 @@ It is recommended that you use [nvm (Node Version Manager)](https://github.com/c
 
 * Once built, you can find assets stored on the web server, default location is [localhost:9002/dist/assets/](http://localhost:9002/dist/assets/)
 
+#### Tools
+
+To run some of our tests you will need additional tooling:
+
+##### Audit
+
+We use `dis-vulncheck` to do auditing, which you will [need to install](https://github.com/ONSdigital/dis-vulncheck).
+
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md) for details.
