@@ -8,13 +8,13 @@ The frontend service is responsible for setting up the assets binary and source 
 
 You should also store all assets and models within the service itself with the following structure:
 
-```md
+```plaintext
 .
 ├── assets                   # app specific templates & localisations 
 │   ├── templates          
-│   ├── locales  
-|   |   ├──  service.en.toml
-|   └── └──  service.cy.toml
+│   └── locales  
+│       ├── service.en.toml
+│       └── service.cy.toml
 └── model                    # app specific models
 ```
 
@@ -22,9 +22,9 @@ You should also store all assets and models within the service itself with the f
 
 For `dis-design-system-go` to work correctly, we use `go-bindata` to generate a combined assets source file.
 
-Update the frontend service's `Makefile` with the following new commands so that `go-bindata` will generate this file:
+Update the frontend service's `Makefile` with the following new commands so that `go-bindata` will generate the file.
 
-```Makefile
+```makefile
 LOCAL_RENDERER_IN_USE = $(shell grep -c "\"github.com/ONSdigital/dis-design-system-go\" =" go.mod)
 
 .PHONY: fetch-renderer
@@ -53,12 +53,13 @@ Due to having distributed assets that are combined with `go-bindata`, we require
 
 The `build` and `debug` tasks should use the relevant `generate-` command as a prerequisite:
 
-```Makefile
+```makefile
 .PHONY: build
 build: generate-prod
-
+  # do something
 .PHONY: debug
 debug: generate-debug
+  # do something else
 ```
 
 ## Config
