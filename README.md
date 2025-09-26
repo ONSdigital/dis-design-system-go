@@ -6,9 +6,7 @@ Beta rendering library for Dissemination frontend go microservices. `dis-design-
 
 * Run `make help` to see full list of make targets
 
-## CSS/JS
-
-### Install dependencies
+### Dependencies
 
 To build, run, deploy, test and audit the app you will need some additional tooling:
 
@@ -32,15 +30,11 @@ It is recommended that you use [nvm (Node Version Manager)](https://github.com/c
    nvm install
    ```
 
-##### Audit
+#### Audit
 
 We use `dis-vulncheck` to do auditing, which you will [need to install](https://github.com/ONSdigital/dis-vulncheck).
 
 For Javascript auditing we use `auditjs` which requires you to [setup an OSS Index account](https://github.com/ONSdigital/dp/blob/main/guides/MAC_SETUP.md#oss-index-account-and-configuration)
-
-#### Other
-
-No further dependencies other than those defined in `go.mod`
 
 ### Generate the CSS and JS
 

@@ -23,7 +23,7 @@ From within your consuming frontend service:
 
     For example the `debug` target might look similar to:
   
-    ```Makefile
+    ```makefile
     .PHONY: debug
     debug: generate-debug
         go build -tags 'debug' -race -o $(BINPATH)/dp-frontend-homepage-controller -ldflags "-X main.BuildTime=$(BUILD_TIME) -X main.GitCommit=$(GIT_COMMIT) -X main.Version=$(VERSION)"
