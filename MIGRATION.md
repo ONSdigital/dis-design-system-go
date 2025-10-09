@@ -19,49 +19,33 @@ From within your consuming frontend service:
     + "github.com/ONSdigital/dis-design-system-go/model"
     ```
 
-1. Add the `APP_RENDERER_VERSION` into the `build` and `debug` Makefile targets
+1. Set the variable `RendererVersion` in `config.go` to the `APP_RENDERER_VERSION` in the `build` Makefile target using `ldflags`
 
-    For example the `debug` target might look similar to:
-  
+    For example:
+
     ```makefile
-    .PHONY: debug
-    debug: generate-debug
-        go build -tags 'debug' -race -o $(BINPATH)/dp-frontend-homepage-controller -ldflags "-X main.BuildTime=$(BUILD_TIME) -X main.GitCommit=$(GIT_COMMIT) -X main.Version=$(VERSION)"
-        HUMAN_LOG=1 DEBUG=1 APP_RENDERER_VERSION=$(APP_RENDERER_VERSION) $(BINPATH)/dp-frontend-homepage-controller
+    .PHONY: build
+    build: generate-prod
+        go build -tags 'production' -o $(BINPATH)/dp-frontend-cookie-controller -ldflags "-X main.BuildTime=$(BUILD_TIME) -X main.GitCommit=$(GIT_COMMIT) -X main.Version=$(VERSION) -X github.com/ONSdigital/dp-frontend-cookie-controller/config.RendererVersion=$(APP_RENDERER_VERSION)"
     ```
 
-1. Retrieve the environment variable `APP_RENDERER_VERSION` that you have set in the previous step and expose it in `config.go`.
-
-    Change the s3 directory to `dis-design-system-go`.
+1. Add the variable `RendererVersion` in `config.go`
 
     ```go
     type Config struct {
-        // Other config here
-        RendererVersion string `envconfig:"APP_RENDERER_VERSION"`
+        // config here
     }
 
-    func get() (*Config, error) {
-        if cfg != nil {
-            return cfg, nil
-        }
+    var cfg *Config
 
-        // other code
+    var RendererVersion string = "v0.2.0" // OPTIONALLY - set to a stable base
+    ```
 
-        cfg = &Config{
-            // Some other default config here
-            RendererVersion: "v0.1.0", // OPTIONALLY - set to a stable base
-        }
+1. Change the s3 directory to `dis-design-system-go` in `config.go`.
 
-        // other code 
-
-        if cfg.Debug {
-            cfg.PatternLibraryAssetsPath = "http://localhost:9002/dist/assets"
-        } else {
-            cfg.PatternLibraryAssetsPath = fmt.Sprintf("//cdn.ons.gov.uk/dis-design-system-go/%s", cfg.RendererVersion)
-        }
-
-        // other code
-    }
+    ```diff
+    - .PatternLibraryAssetsPath = "//cdn.ons.gov.uk/dp-design-system/f3e1909"
+    + .PatternLibraryAssetsPath = fmt.Sprintf("//cdn.ons.gov.uk/dis-design-system-go/%s", RendererVersion)
     ```
 
 1. Test your changes by running `make debug` from the consuming app. Follow the steps in the [README](README.md#generate-the-css-and-js) to generate the css/js locally.
