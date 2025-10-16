@@ -1,6 +1,6 @@
 #!/bin/bash -eux
 
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.64.6
+go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.5.0
 
 pushd dis-design-system-go
   make lint
