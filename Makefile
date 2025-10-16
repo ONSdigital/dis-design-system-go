@@ -64,15 +64,15 @@ fmt: ## Run Go formatting on code
 	go fmt ./...
 
 .PHONY: lint
-lint: ## Exit as testing CI integration; not required for POC
-	exit
-
+lint: lint-js ## Lint JS code (Go linting is coming in a future commit)
+	
 .PHONY: lint-go
 lint-go: ## Run Go linters
 	golangci-lint run ./...
 
 .PHONY: lint-js
 lint-js: ## Run JS linters
+	$(NPM) install --unsafe-perm
 	$(NPM) run lint
 
 .PHONY: test
