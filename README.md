@@ -8,7 +8,7 @@ Beta rendering library for Dissemination frontend go microservices. `dis-design-
 
 ### Dependencies
 
-To build, run, deploy, test and audit the app you will need some additional tooling:
+To build, run, deploy, test, lint and audit the app you will need some additional tooling:
 
 #### NVM
 
@@ -35,6 +35,26 @@ It is recommended that you use [nvm (Node Version Manager)](https://github.com/c
 We use `dis-vulncheck` to do auditing, which you will [need to install](https://github.com/ONSdigital/dis-vulncheck).
 
 For Javascript auditing we use `auditjs` which requires you to [setup an OSS Index account](https://github.com/ONSdigital/dp/blob/main/guides/MAC_SETUP.md#oss-index-account-and-configuration)
+
+#### Linter
+
+##### JS Lint
+
+This app uses [eslint](https://eslint.org/) with [Airbnb](https://airbnb.io/javascript) base configuration to lint the JS. See `.eslintrc.json` for settings.
+
+###### Run
+
+```bash
+make lint-js
+```
+
+###### Fix
+
+Some linting issues can be fixed automatically. To use this functionality, pass the file you wish to fix at the end of the command:
+
+```bash
+nvm exec -- npm run lint:fix path/to/js/file/to/fix
+```
 
 ### Generate the CSS and JS
 
