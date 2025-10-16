@@ -12,7 +12,7 @@ import (
 
 var tz *time.Location
 
-func dateWithFormat(s string, format string) string {
+func dateWithFormat(s, format string) string {
 	t, err := time.Parse(time.RFC3339, s)
 	if err != nil {
 		log.Error(context.Background(), "failed to parse time", err)
@@ -95,17 +95,13 @@ func DateTimeOnsDatePatternFormat(s, lang string) string {
 	return template.HTMLEscapeString(formattedTimestamp)
 }
 
-func init() {
-	var err error
-	if tz, err = time.LoadLocation("Europe/London"); err != nil {
-		log.Error(context.Background(), "failed to load timezone", err)
-		tz = nil
-	}
-}
-
 func localiseTime(t *time.Time) time.Time {
 	if tz == nil {
-		return *t
+		var err error
+		if tz, err = time.LoadLocation("Europe/London"); err != nil {
+			log.Error(context.Background(), "failed to load timezone", err)
+			return *t
+		}
 	}
 	return t.In(tz)
 }

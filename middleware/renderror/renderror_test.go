@@ -60,7 +60,6 @@ func TestRenderr(t *testing.T) {
 			r.ServeHTTP(w, req)
 			So(mockedRC.calls.BuildHTML, ShouldBeEmpty)
 		})
-
 	})
 }
 

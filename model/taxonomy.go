@@ -1,6 +1,6 @@
 package model
 
-//TaxonomyNode ...
+// TaxonomyNode represents a node in a taxonomy structure.
 type TaxonomyNode struct {
 	Title    string         `json:"title"`
 	URI      string         `json:"uri"`

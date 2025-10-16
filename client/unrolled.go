@@ -6,7 +6,6 @@ import (
 
 	"github.com/ONSdigital/dis-design-system-go/helper"
 	"github.com/ONSdigital/dis-design-system-go/model"
-	"github.com/unrolled/render"
 	unrolled "github.com/unrolled/render"
 )
 
@@ -18,7 +17,7 @@ type unrolledAdapter struct {
 func NewUnrolledAdapter(assetFn func(name string) ([]byte, error), assetNameFn func() []string, isDevelopment bool) Renderer {
 	helper.InitialiseLocalisationsHelper(assetFn)
 	return &unrolledAdapter{
-		unrolled: unrolled.New(render.Options{
+		unrolled: unrolled.New(unrolled.Options{
 			Asset:         assetFn,
 			AssetNames:    assetNameFn,
 			Layout:        "main",

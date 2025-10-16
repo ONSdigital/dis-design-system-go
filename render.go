@@ -21,9 +21,9 @@ type Render struct {
 }
 
 // New returns a render struct and accepts any rendering client that satisfies the Renderer interface
-func New(client client.Renderer, assetsPath, siteDomain string) *Render {
+func New(rc client.Renderer, assetsPath, siteDomain string) *Render {
 	return &Render{
-		client:                   client,
+		client:                   rc,
 		hMutex:                   &sync.Mutex{},
 		jMutex:                   &sync.Mutex{},
 		PatternLibraryAssetsPath: assetsPath,
@@ -38,10 +38,7 @@ This means that templates are recompiled on request.
 Any updates made to your templates can then be viewed upon browser refresh, rather than having to restart the app.
 */
 func NewWithDefaultClient(assetFn func(name string) ([]byte, error), assetNameFn func() []string, assetsPath, siteDomain string) *Render {
-	isDevelopment := false
-	if strings.Contains(siteDomain, "localhost") {
-		isDevelopment = true
-	}
+	isDevelopment := strings.Contains(siteDomain, "localhost")
 	return &Render{
 		client:                   client.NewUnrolledAdapter(assetFn, assetNameFn, isDevelopment),
 		hMutex:                   &sync.Mutex{},

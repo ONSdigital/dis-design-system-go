@@ -4,6 +4,9 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 // DatePeriodFormat will format a time-series date period string to a human accessible format e.g.
@@ -32,13 +35,11 @@ func DatePeriodFormat(s string) string {
 	if Q3 > -1 {
 		Q3EndIndex := Q3 + 2
 		s = s[:Q3] + "Jul - Sep" + s[Q3EndIndex:]
-
 	}
 	Q4 := strings.Index(s, "Q4")
 	if Q4 > -1 {
 		Q4EndIndex := Q4 + 2
 		s = s[:Q4] + "Oct - Dec" + s[Q4EndIndex:]
-
 	}
 
 	// 3. Move year to end of string if present and insert a space
@@ -68,6 +69,7 @@ func DatePeriodFormat(s string) string {
 	}
 
 	// 4. Convert BLOCK CAPS to Title Caps
-	timePeriodFormatted := strings.Title(strings.ToLower(s))
+	caser := cases.Title(language.English)
+	timePeriodFormatted := caser.String(strings.ToLower(s))
 	return timePeriodFormatted
 }

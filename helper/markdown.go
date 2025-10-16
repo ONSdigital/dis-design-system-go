@@ -22,5 +22,6 @@ func Markdown(md string) template.HTML {
 	}
 
 	s := blackfriday.Run([]byte(modifiedMarkdown.String()))
+	//nolint:gosec // known risk, input is expected to be safe
 	return template.HTML(s)
 }

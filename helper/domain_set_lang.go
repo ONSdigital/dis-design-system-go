@@ -10,7 +10,7 @@ import (
 	"github.com/ONSdigital/log.go/v2/log"
 )
 
-func DomainSetLang(domain string, uri string, language string) string {
+func DomainSetLang(domain, uri, language string) string {
 	languageSupported := false
 	for _, locale := range request.SupportedLanguages {
 		if locale == language {

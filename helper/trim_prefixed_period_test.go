@@ -10,13 +10,11 @@ import (
 func TestTrimPrefixedPeriod(t *testing.T) {
 	Convey("That the returned string is myString", t, func() {
 		got := helper.TrimPrefixedPeriod(".myString")
-		want := "myString"
-		So(got, ShouldEqual, want)
+		So(got, ShouldEqual, "myString")
 	})
 	Convey("That all periods are trimmed", t, func() {
 		got := helper.TrimPrefixedPeriod(".....myString")
-		want := "myString"
-		So(got, ShouldEqual, want)
+		So(got, ShouldEqual, "myString")
 	})
 	Convey("That only leading periods are trimmed", t, func() {
 		got := helper.TrimPrefixedPeriod(".string with periods on the end....")

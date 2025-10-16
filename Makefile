@@ -64,7 +64,7 @@ fmt: ## Run Go formatting on code
 	go fmt ./...
 
 .PHONY: lint
-lint: lint-js ## Lint JS code (Go linting is coming in a future commit)
+lint: lint-js lint-go
 	
 .PHONY: lint-go
 lint-go: ## Run Go linters

@@ -11,14 +11,15 @@ import (
 func TestShareLink(t *testing.T) {
 	Convey("SocialType", t, func() {
 		Convey("Should implement the Stringer interface", func() {
-			So(model.SocialEmail.String(), ShouldEqual, "email")
+			So(model.SocialEmail.String(), ShouldEqual, model.SocialEmailStr)
 		})
 	})
 
 	Convey("CreateLink", t, func() {
+		title := "Test Title"
+		target := "https://www.example.com"
+
 		Convey("SocialUnknown", func() {
-			title := "Test Title"
-			target := "https://www.example.com"
 			shareLink := model.SocialUnknown.CreateLink(title, target)
 
 			Convey("Should create a link of the specified type", func() {
@@ -35,8 +36,6 @@ func TestShareLink(t *testing.T) {
 		})
 
 		Convey("SocialEmail", func() {
-			title := "Test Title"
-			target := "https://www.example.com"
 			shareLink := model.SocialEmail.CreateLink(title, target)
 
 			Convey("Should create a link of the specified type", func() {
@@ -67,8 +66,6 @@ func TestShareLink(t *testing.T) {
 		})
 
 		Convey("SocialFacebook", func() {
-			title := "Test Title"
-			target := "https://www.example.com"
 			shareLink := model.SocialFacebook.CreateLink(title, target)
 
 			Convey("Should create a link of the specified type", func() {
@@ -99,8 +96,6 @@ func TestShareLink(t *testing.T) {
 		})
 
 		Convey("SocialLinkedin", func() {
-			title := "Test Title"
-			target := "https://www.example.com"
 			shareLink := model.SocialLinkedin.CreateLink(title, target)
 
 			Convey("Should create a link of the specified type", func() {
@@ -131,8 +126,6 @@ func TestShareLink(t *testing.T) {
 		})
 
 		Convey("SocialTwitter", func() {
-			title := "Test Title"
-			target := "https://www.example.com"
 			shareLink := model.SocialTwitter.CreateLink(title, target)
 
 			Convey("Should create a link of the specified type", func() {

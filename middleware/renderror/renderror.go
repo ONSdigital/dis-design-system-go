@@ -51,7 +51,6 @@ func (rI *httpResponseInterceptor) Write(b []byte) (int, error) {
 }
 
 func (rI *httpResponseInterceptor) writeHeaders() {
-
 	if rI.headersWritten {
 		return
 	}

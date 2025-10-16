@@ -51,19 +51,18 @@ func initLocalizer(bundle *i18n.Bundle) map[string]*i18n.Localizer {
 	m := make(map[string]*i18n.Localizer)
 	for _, locale := range request.SupportedLanguages {
 		m[locale] = i18n.NewLocalizer(bundle, locale)
-
 	}
 	return m
 }
 
-func Localise(key string, language string, plural int, templateArguments ...string) string {
+func Localise(key, localeLanguage string, plural int, templateArguments ...string) string {
 	if key == "" {
 		err := fmt.Errorf("key %s not found in locale file", key)
 		log.Error(context.Background(), "no locale look up key provided", err)
 		return ""
 	}
-	if language == "" {
-		language = "en"
+	if localeLanguage == "" {
+		localeLanguage = "en"
 	}
 
 	// Configure template data for arguments in strings
@@ -74,7 +73,7 @@ func Localise(key string, language string, plural int, templateArguments ...stri
 		templateData[key] = argument
 	}
 
-	loc := localizers[language]
+	loc := localizers[localeLanguage]
 	translation := loc.MustLocalize(&i18n.LocalizeConfig{
 		MessageID:    key,
 		PluralCount:  plural,

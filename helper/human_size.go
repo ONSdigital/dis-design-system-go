@@ -10,9 +10,15 @@ func HumanSize(size string) (string, error) {
 	if size == "" {
 		return "", nil
 	}
+
 	s, err := strconv.Atoi(size)
 	if err != nil {
 		return "", err
 	}
-	return datasize.ByteSize(s).HumanReadable(), nil
+
+	if s < 0 {
+		return "", nil
+	}
+
+	return datasize.ByteSize(uint64(s)).HumanReadable(), nil
 }

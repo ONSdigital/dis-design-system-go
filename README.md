@@ -36,13 +36,23 @@ We use `dis-vulncheck` to do auditing, which you will [need to install](https://
 
 For Javascript auditing we use `auditjs` which requires you to [setup an OSS Index account](https://github.com/ONSdigital/dp/blob/main/guides/MAC_SETUP.md#oss-index-account-and-configuration)
 
-#### Linter
+#### Linting
+
+##### Go Lint
+
+We use v2 of golangci-lint, which you will [need to install](https://golangci-lint.run/docs/welcome/install).
+
+###### Run Go Lint
+
+```bash
+make lint-go
+```
 
 ##### JS Lint
 
 This app uses [eslint](https://eslint.org/) with [Airbnb](https://airbnb.io/javascript) base configuration to lint the JS. See `.eslintrc.json` for settings.
 
-###### Run
+###### Run JS Lint
 
 ```bash
 make lint-js

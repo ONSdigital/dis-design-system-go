@@ -1,6 +1,8 @@
 package model
 
-/* CompactSearch provides an input for a search term.
+/*
+	CompactSearch provides an input for a search term.
+
 ElementId is the id in the document.
 InputName is the name submitted in a form.
 Language should be passed in from the Page model.
