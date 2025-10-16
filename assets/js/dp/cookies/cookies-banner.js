@@ -22,7 +22,7 @@ function extractDomainFromUrl(url) {
   }
 
   // top level domains (TLD/SLD) in use
-  const pattern = "(\\.co\\.uk|\\.onsdigital\\.uk|\\.gov\\.uk)";
+  const pattern = '(\\.co\\.uk|\\.onsdigital\\.uk|\\.gov\\.uk)';
   const tlds = new RegExp(pattern);
 
   const isKnownDomain = tlds.test(url);
