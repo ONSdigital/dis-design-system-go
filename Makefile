@@ -22,6 +22,10 @@ NPM = $(NVM_EXEC) npm
 .PHONY: all
 all: delimiter-AUDIT audit delimiter-UNIT-TESTS test delimiter-LINTERS lint delimiter-FINISH ## Runs multiple targets, audit, lint and test
 
+.PHONY: prepare-node
+prepare-node: ## Install node modules
+	$(NPM) install --unsafe-perm
+
 .PHONY: audit
 audit: audit-go audit-node
 
@@ -29,9 +33,8 @@ audit: audit-go audit-node
 audit-go: ## Runs checks for security vulnerabilities on dependencies (including transient ones)
 	dis-vulncheck
 
-.PHONY: audit-node
-audit-node: 
-	$(NPM) install --unsafe-perm
+.PHONY: audit-node 
+audit-node: prepare-node ## Runs npm audit to check for security vulnerabilities in node modules
 	$(NPM) run audit
 
 .PHONY: build
@@ -42,10 +45,8 @@ build-go:
 	go build -tags 'production' $(LDFLAGS) -o $(BINPATH)/dp-renderer
 
 .PHONY: build-node
-build-node: 
-	$(NPM) install --unsafe-perm
+build-node: prepare-node
 	$(NPM) run build
-
 
 .PHONY: convey
 convey: ## Runs unit test suite and outputs results on http://127.0.0.1:8080/
@@ -65,12 +66,7 @@ fmt: ## Run Go formatting on code
 
 .PHONY: lint
 lint: ## Run MegaLinter
-	$(NPM) install --unsafe-perm
 	npx mega-linter-runner
-
-.PHONY: prepare-node
-prepare-node: 
-	$(NPM) install --unsafe-perm
 
 .PHONY: test
 test: ## Runs unit tests including checks for race conditions and returns coverage
