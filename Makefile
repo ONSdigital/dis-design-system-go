@@ -64,16 +64,9 @@ fmt: ## Run Go formatting on code
 	go fmt ./...
 
 .PHONY: lint
-lint: lint-js lint-go
-	
-.PHONY: lint-go
-lint-go: ## Run Go linters
-	golangci-lint run ./...
-
-.PHONY: lint-js
-lint-js: ## Run JS linters
+lint: ## Run MegaLinter
 	$(NPM) install --unsafe-perm
-	$(NPM) run lint
+	npx mega-linter-runner
 
 .PHONY: test
 test: ## Runs unit tests including checks for race conditions and returns coverage

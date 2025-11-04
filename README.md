@@ -38,32 +38,28 @@ For Javascript auditing we use `auditjs` which requires you to [setup an OSS Ind
 
 #### Linting
 
+This library uses [MegaLinter](https://megalinter.io/) which allows multiple languages to be linted with one command. See `.mega-linter.yml` for enabled linters and configuration.
+
 ##### Go Lint
 
-We use v2 of golangci-lint, which you will [need to install](https://golangci-lint.run/docs/welcome/install).
-
-###### Run Go Lint
-
-```bash
-make lint-go
-```
+MegaLinter uses v2 of golangci-lint, which you will [need to install](https://golangci-lint.run/docs/welcome/install).
 
 ##### JS Lint
 
-This app uses [eslint](https://eslint.org/) with [Airbnb](https://airbnb.io/javascript) base configuration to lint the JS. See `.eslintrc.json` for settings.
-
-###### Run JS Lint
-
-```bash
-make lint-js
-```
+MegaLinter uses [eslint](https://eslint.org/) with [Airbnb](https://airbnb.io/javascript) base configuration to lint the JS. See `.eslintrc.json` for settings.
 
 ###### Fix
 
-Some linting issues can be fixed automatically. To use this functionality, pass the file you wish to fix at the end of the command:
+JS linting issues can be fixed automatically. To use this functionality, pass the file you wish to fix at the end of the command:
 
 ```bash
 nvm exec -- npm run lint:fix path/to/js/file/to/fix
+```
+
+##### Run MegaLinter
+
+```bash
+make lint
 ```
 
 ### Generate the CSS and JS
