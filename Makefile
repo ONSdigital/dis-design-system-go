@@ -68,6 +68,10 @@ lint: ## Run MegaLinter
 	$(NPM) install --unsafe-perm
 	npx mega-linter-runner
 
+.PHONY: prepare-node
+prepare-node: 
+	$(NPM) install --unsafe-perm
+
 .PHONY: test
 test: ## Runs unit tests including checks for race conditions and returns coverage
 	go test -race -cover -tags 'production' ./...
