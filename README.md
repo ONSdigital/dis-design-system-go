@@ -48,13 +48,12 @@ MegaLinter uses v2 of golangci-lint, which you will [need to install](https://go
 
 MegaLinter uses [eslint](https://eslint.org/) with [Airbnb](https://airbnb.io/javascript) base configuration to lint the JS. See `.eslintrc.json` for settings.
 
-###### Fix
+##### Fix
 
-JS linting issues can be fixed automatically. To use this functionality, pass the file you wish to fix at the end of the command:
+MegaLinter can fix some linting issues automatically. Autofixes are enabled for local JS linting. To automatically apply fixes, pass in the `APPLY_FIXES` environment variable into the runner e.g. `npx mega-linter-runner -e 'APPLY_FIXES=JAVASCRIPT_ES'`. See [makefile](Makefile) for current setup.
 
-```bash
-nvm exec -- npm run lint:fix path/to/js/file/to/fix
-```
+> [!NOTE]
+> Autofixes should not be enabled in CI
 
 ##### Run MegaLinter
 

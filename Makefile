@@ -66,7 +66,7 @@ fmt: ## Run Go formatting on code
 
 .PHONY: lint
 lint: ## Run MegaLinter
-	npx mega-linter-runner
+	npx mega-linter-runner -e 'APPLY_FIXES=JAVASCRIPT_ES'
 
 .PHONY: test
 test: ## Runs unit tests including checks for race conditions and returns coverage
