@@ -63,7 +63,7 @@
       width: 100%;
       text-align: center;
       display: inline-block;
-      margin: ($baseline *2) 0 0 0;
+      margin: ($baseline * 2) 0 0 0;
       display: none;
 
       @include breakpoint(sm) {
@@ -88,8 +88,8 @@
         background: white;
         padding: 40px;
         z-index: 9999999999;
-        overflow-y:auto;
-        overflow-x:hidden;
+        overflow-y: auto;
+        overflow-x: hidden;
       }
     }
 
@@ -98,7 +98,7 @@
 
       h3 {
         margin: 0;
-        display:inline-block
+        display: inline-block;
       }
     }
 
@@ -128,7 +128,6 @@
     }
 
     &__select {
-
       label {
         vertical-align: unset;
       }
@@ -161,7 +160,6 @@
       margin: ($baseline * 2) 0 $baseline 0;
     }
 
-
     &__item {
       list-style: none;
       padding-left: 0;
@@ -183,8 +181,6 @@
       p {
         margin-bottom: $baseline;
       }
-
-
     }
 
     @if $old-ie == false {
@@ -219,7 +215,7 @@
 
     @if $old-ie == false {
       @include breakpoint(sm) {
-        padding: ($baseline * 3) 0;
+        padding: ($baseline * 2) 0 ($baseline * 3);
         overflow: hidden;
       }
     }
@@ -245,7 +241,7 @@
     font-family: $base-font-family;
     font-weight: inherit;
     line-height: $base-line-height;
-    font-size: 1rem;
+    font-size: 17px; // using 17px for consistency with sixteens
     color: $iron-light;
     padding: 12px $col 12px 0;
     background-color: transparent;
@@ -254,7 +250,7 @@
 
     @if $old-ie == false {
       @include breakpoint(sm) {
-        display: none;
+        padding: 0 $col 12px 0;
       }
     }
 
