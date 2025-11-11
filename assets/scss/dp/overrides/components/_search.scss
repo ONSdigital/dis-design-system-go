@@ -207,7 +207,6 @@
     font-family: $base-font-family;
     font-weight: inherit;
     line-height: $base-line-height;
-    width: 100%;
     color: $iron-light;
     padding: ($baseline * 2) 0;
     overflow: initial;
@@ -217,11 +216,8 @@
       @include breakpoint(sm) {
         padding: ($baseline * 2) 0 ($baseline * 3);
         overflow: hidden;
+        flex-wrap: wrap;
       }
-    }
-
-    @include breakpoint(md-max) {
-      display: flex;
     }
 
     &--no-results {
