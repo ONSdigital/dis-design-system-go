@@ -71,7 +71,7 @@
                     </li>
                     {{if not .SearchDisabled}}
                         <li class="nav--controls__item ">
-                            <a href="#nav-search" id="search-toggle" aria-controls="nav-search" aria-expanded="false" class="nav--controls__search">
+                            <a href="#nav-search" id="search-toggle" aria-controls="nav-search" aria-expanded="false" class="nav--controls__search" aria-label="Search">
                                 <span class="nav--controls__text">{{ localise "Search" .Language 1 }}</span>
                             </a>
                         </li>
@@ -126,7 +126,7 @@
                     </li>
                     {{if not .SearchDisabled}}
                         <li class="nav--controls__item ">
-                            <a href="#nav-search" id="search-toggle" aria-controls="nav-search" aria-expanded="false" class="nav--controls__search">
+                            <a href="#nav-search" id="search-toggle" aria-controls="nav-search" aria-expanded="false" class="nav--controls__search" aria-label="Search">
                                 <span class="nav--controls__text">{{ localise "Search" .Language 1 }}</span>
                             </a>
                         </li>
@@ -303,8 +303,8 @@
         {{ end }}
     </div>
     {{if not .SearchDisabled}}
-        <div class="search nav-search--hidden print--hide" id="searchBar">
-            <div class="wrapper" role="search">
+        <div class="search nav-search--hidden print--hide" id="searchBar" role="search">
+            <div class="wrapper">
                 <form class="col-wrap search__form" action="/search">
                     <label class="search__label col col--md-23 col--lg-24" for="nav-search">{{ localise "SearchKeywordTimeSeriesID" .Language 1 }}</label>
                     <input
@@ -314,7 +314,7 @@
                         id="nav-search"
                         name="q"
                         value="">
-                    <button type="submit" class="search__button col--md-3 col--lg-3" id="nav-search-submit">
+                    <button type="submit" class="search__button col--md-3 col--lg-3" id="nav-search-submit" aria-label="Search">
                         <span class="visuallyhidden">{{ localise "Search" .Language 1 }}</span>
                         {{ if .FeatureFlags.SixteensVersion }}
                             <span class="icon icon-search--light"> </span>
