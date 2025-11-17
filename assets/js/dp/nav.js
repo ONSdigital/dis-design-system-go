@@ -145,6 +145,22 @@ window.addEventListener('resize', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      // Find all nav items currently hovered (with open submenu)
+      document.querySelectorAll('.primary-nav__item:hover > ul').forEach((submenu) => {
+        submenu.classList.add('ons-u-hidden');
+        const parentItem = submenu.closest('.primary-nav__item');
+        // Handler to restore submenu on mouse leave
+        const handleMouseLeave = () => {
+          submenu.classList.remove('ons-u-hidden');
+          parentItem.removeEventListener('mouseleave', handleMouseLeave);
+        };
+        parentItem.addEventListener('mouseleave', handleMouseLeave, { once: true });
+      });
+    }
+  });
+
   const primaryNav = document.querySelector('#nav-primary');
   const searchBar = document.querySelector('#searchBar');
   const navItem = document.querySelectorAll('.js-nav');
