@@ -5,5 +5,5 @@ GOTOOLCHAIN: auto
 ENABLE_LINTERS: # If you use ENABLE_LINTERS variable, all other linters will be disabled by default
   - JAVASCRIPT_ES
   - GO_GOLANGCI_LINT
-JAVASCRIPT_ES_FILTER_REGEX_INCLUDE: '(assets/js)'
+JAVASCRIPT_ES_FILTER_REGEX_EXCLUDE: '(gulpfile.js|babel.*.js|assets/js/import*.js|assets/js/polyfills.js)$'
 FLAVOR_SUGGESTIONS: false
