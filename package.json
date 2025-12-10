@@ -12,7 +12,7 @@
     "start": "ws -p ${PORT:-9002}",
     "dev": "run-p clean watch start",
     "clean": "rimraf ./dist",
-    "lint": "eslint --ext js assets/js",
+    "lint": "eslint --ext js",
     "lint:fix": "eslint --ext js --fix"
   },
   "browserslist": [
