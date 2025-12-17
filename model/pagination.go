@@ -3,7 +3,7 @@ package model
 import (
 	"fmt"
 
-	"github.com/ONSdigital/dis-design-system-go/helper"
+	"github.com/ONSdigital/dis-design-system-go/v2/helper"
 )
 
 // Pagination represents all information regarding pagination of search results

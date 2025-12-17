@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	render "github.com/ONSdigital/dis-design-system-go"
+	render "github.com/ONSdigital/dis-design-system-go/v2"
 	"github.com/ONSdigital/dp-cookies/cookies"
 	"github.com/ONSdigital/log.go/v2/log"
 )

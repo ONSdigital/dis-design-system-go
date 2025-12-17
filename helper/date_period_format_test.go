@@ -3,7 +3,7 @@ package helper_test
 import (
 	"testing"
 
-	"github.com/ONSdigital/dis-design-system-go/helper"
+	"github.com/ONSdigital/dis-design-system-go/v2/helper"
 
 	. "github.com/smartystreets/goconvey/convey"
 )

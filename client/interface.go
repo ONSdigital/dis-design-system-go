@@ -3,7 +3,7 @@ package client
 import (
 	"io"
 
-	"github.com/ONSdigital/dis-design-system-go/model"
+	"github.com/ONSdigital/dis-design-system-go/v2/model"
 )
 
 type Renderer interface {

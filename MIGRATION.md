@@ -16,7 +16,7 @@ From within your consuming frontend service:
   
     ```diff
     - "github.com/ONSdigital/dp-renderer/v2/model"
-    + "github.com/ONSdigital/dis-design-system-go/model"
+    + "github.com/ONSdigital/dis-design-system-go/v2/model"
     ```
 
 1. Set the variable `RendererVersion` in `config.go` to the `APP_RENDERER_VERSION` in the `build` Makefile target using `ldflags`
@@ -38,7 +38,7 @@ From within your consuming frontend service:
 
     var cfg *Config
 
-    var RendererVersion string = "v0.2.0" // OPTIONALLY - set to a stable base
+    var RendererVersion string = "v2.0.0" // OPTIONALLY - set to a stable base
     ```
 
 1. Change the s3 directory to `dis-design-system-go` in `config.go`.

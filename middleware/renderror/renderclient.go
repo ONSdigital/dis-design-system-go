@@ -4,14 +4,9 @@
 package renderror
 
 import (
-	"github.com/ONSdigital/dis-design-system-go/model"
+	"github.com/ONSdigital/dis-design-system-go/v2/model"
 	"io"
 	"sync"
-)
-
-var (
-	lockRenderClientMockBuildHTML sync.RWMutex
-	lockRenderClientMockSetError  sync.RWMutex
 )
 
 // Ensure, that RenderClientMock does implement RenderClient.
@@ -20,22 +15,22 @@ var _ RenderClient = &RenderClientMock{}
 
 // RenderClientMock is a mock implementation of RenderClient.
 //
-//     func TestSomethingThatUsesRenderClient(t *testing.T) {
+//	func TestSomethingThatUsesRenderClient(t *testing.T) {
 //
-//         // make and configure a mocked RenderClient
-//         mockedRenderClient := &RenderClientMock{
-//             BuildHTMLFunc: func(w io.Writer, status int, templateName string, pageModel interface{}) error {
-// 	               panic("mock out the BuildHTML method")
-//             },
-//             SetErrorFunc: func(w io.Writer, status int, errorModel model.ErrorResponse) error {
-// 	               panic("mock out the SetError method")
-//             },
-//         }
+//		// make and configure a mocked RenderClient
+//		mockedRenderClient := &RenderClientMock{
+//			BuildHTMLFunc: func(w io.Writer, status int, templateName string, pageModel interface{}) error {
+//				panic("mock out the BuildHTML method")
+//			},
+//			SetErrorFunc: func(w io.Writer, status int, errorModel model.ErrorResponse) error {
+//				panic("mock out the SetError method")
+//			},
+//		}
 //
-//         // use mockedRenderClient in code that requires RenderClient
-//         // and then make assertions.
+//		// use mockedRenderClient in code that requires RenderClient
+//		// and then make assertions.
 //
-//     }
+//	}
 type RenderClientMock struct {
 	// BuildHTMLFunc mocks the BuildHTML method.
 	BuildHTMLFunc func(w io.Writer, status int, templateName string, pageModel interface{}) error
@@ -66,6 +61,8 @@ type RenderClientMock struct {
 			ErrorModel model.ErrorResponse
 		}
 	}
+	lockBuildHTML sync.RWMutex
+	lockSetError  sync.RWMutex
 }
 
 // BuildHTML calls BuildHTMLFunc.
@@ -84,15 +81,16 @@ func (mock *RenderClientMock) BuildHTML(w io.Writer, status int, templateName st
 		TemplateName: templateName,
 		PageModel:    pageModel,
 	}
-	lockRenderClientMockBuildHTML.Lock()
+	mock.lockBuildHTML.Lock()
 	mock.calls.BuildHTML = append(mock.calls.BuildHTML, callInfo)
-	lockRenderClientMockBuildHTML.Unlock()
+	mock.lockBuildHTML.Unlock()
 	return mock.BuildHTMLFunc(w, status, templateName, pageModel)
 }
 
 // BuildHTMLCalls gets all the calls that were made to BuildHTML.
 // Check the length with:
-//     len(mockedRenderClient.BuildHTMLCalls())
+//
+//	len(mockedRenderClient.BuildHTMLCalls())
 func (mock *RenderClientMock) BuildHTMLCalls() []struct {
 	W            io.Writer
 	Status       int
@@ -105,9 +103,9 @@ func (mock *RenderClientMock) BuildHTMLCalls() []struct {
 		TemplateName string
 		PageModel    interface{}
 	}
-	lockRenderClientMockBuildHTML.RLock()
+	mock.lockBuildHTML.RLock()
 	calls = mock.calls.BuildHTML
-	lockRenderClientMockBuildHTML.RUnlock()
+	mock.lockBuildHTML.RUnlock()
 	return calls
 }
 
@@ -125,15 +123,16 @@ func (mock *RenderClientMock) SetError(w io.Writer, status int, errorModel model
 		Status:     status,
 		ErrorModel: errorModel,
 	}
-	lockRenderClientMockSetError.Lock()
+	mock.lockSetError.Lock()
 	mock.calls.SetError = append(mock.calls.SetError, callInfo)
-	lockRenderClientMockSetError.Unlock()
+	mock.lockSetError.Unlock()
 	return mock.SetErrorFunc(w, status, errorModel)
 }
 
 // SetErrorCalls gets all the calls that were made to SetError.
 // Check the length with:
-//     len(mockedRenderClient.SetErrorCalls())
+//
+//	len(mockedRenderClient.SetErrorCalls())
 func (mock *RenderClientMock) SetErrorCalls() []struct {
 	W          io.Writer
 	Status     int
@@ -144,8 +143,8 @@ func (mock *RenderClientMock) SetErrorCalls() []struct {
 		Status     int
 		ErrorModel model.ErrorResponse
 	}
-	lockRenderClientMockSetError.RLock()
+	mock.lockSetError.RLock()
 	calls = mock.calls.SetError
-	lockRenderClientMockSetError.RUnlock()
+	mock.lockSetError.RUnlock()
 	return calls
 }

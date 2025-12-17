@@ -79,9 +79,9 @@ make lint
 
 Other than `dis-design-system-go` itself, you will need a utility that can combine service-specific and `dis-design-system-go` assets. We currently use `go-bindata` for this process. From the consuming frontend app, run the following commands to install:
 
-* `dis-design-system-go`: `go get github.com/ONSdigital/dis-design-system-go`
+* `dis-design-system-go`: `go get github.com/ONSdigital/dis-design-system-go/v2`
 
-> You can specify a version of `dis-design-system-go` by appending a commit ID or semantic version number to this command. e.g., `go get github.com/ONSdigital/dis-design-system-go@d27f174`
+> You can specify a version of `dis-design-system-go` by appending a commit ID or semantic version number to this command. e.g., `go get github.com/ONSdigital/dis-design-system-go/v2@d27f174`
 
 * `go-bindata`: `go get github.com/kevinburke/go-bindata`
 

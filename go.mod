@@ -1,6 +1,6 @@
-module github.com/ONSdigital/dis-design-system-go
+module github.com/ONSdigital/dis-design-system-go/v2
 
-go 1.24
+go 1.24.0
 
 require (
 	github.com/BurntSushi/toml v1.5.0

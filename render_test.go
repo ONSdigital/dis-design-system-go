@@ -7,8 +7,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	render "github.com/ONSdigital/dis-design-system-go"
-	"github.com/ONSdigital/dis-design-system-go/model"
+	render "github.com/ONSdigital/dis-design-system-go/v2"
+	"github.com/ONSdigital/dis-design-system-go/v2/model"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

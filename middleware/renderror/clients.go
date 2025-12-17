@@ -3,7 +3,7 @@ package renderror
 import (
 	"io"
 
-	"github.com/ONSdigital/dis-design-system-go/model"
+	"github.com/ONSdigital/dis-design-system-go/v2/model"
 )
 
 //go:generate moq -out renderclient.go -pkg renderror . RenderClient

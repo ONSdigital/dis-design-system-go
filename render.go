@@ -8,8 +8,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ONSdigital/dis-design-system-go/client"
-	"github.com/ONSdigital/dis-design-system-go/model"
+	"github.com/ONSdigital/dis-design-system-go/v2/client"
+	"github.com/ONSdigital/dis-design-system-go/v2/model"
 	"github.com/ONSdigital/log.go/v2/log"
 )
 
