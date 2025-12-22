@@ -76,11 +76,7 @@
             name="type"
             value="A specific page"
           >
-          {{ if .FeatureFlags.SixteensVersion }}
-          {{ template "partials/feedback/feedback-legacy-input" .}}
-          {{ else }}
           {{ template "partials/feedback/feedback-input" . }}
-          {{ end }}
         </form>
       </div>
     </div>

@@ -59,7 +59,6 @@ type FeatureFlags struct {
 	EnableGetDataCard      bool   `json:"enable_get_data_card"`
 	HideCookieBanner       bool   `json:"hide_cookie_banner"`
 	ONSDesignSystemVersion string `json:"ons_design_system_version"`
-	SixteensVersion        string `json:"legacy_sixteens_version"`
 	EnableFeedbackAPI      bool   `json:"enable_feedback_api"` // Deprecated: EnableFeedbackAPI should not be used, it will be removed soon
 	FeedbackAPIURL         string `json:"feedback_api_url"`    // technically not a feature flag, but used exclusivly with one
 	IsPublishing           bool   `json:"is_publishing"`

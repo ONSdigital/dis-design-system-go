@@ -314,11 +314,7 @@
                         value="">
                     <button type="submit" class="search__button col--md-3 col--lg-3" id="nav-search-submit" aria-label="Search">
                         <span class="visuallyhidden">{{ localise "Search" .Language 1 }}</span>
-                        {{ if .FeatureFlags.SixteensVersion }}
-                            <span class="icon icon-search--light"> </span>
-                        {{ else }}
-                            <span>{{ template "icons/search" . }}</span>
-                        {{ end }}
+                        <span>{{ template "icons/search" . }}</span>
                     </button>
                 </form>
             </div>
