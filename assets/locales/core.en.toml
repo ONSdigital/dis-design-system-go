@@ -238,14 +238,6 @@ other = "Methodology"
 description = "Search for a keyword(s) or time series ID"
 one = "Search for a keyword(s) or time series ID"
 
-[Covid19BannerTitle]
-description = "Coronavirus (COVID-19)"
-one = "Coronavirus (COVID-19)"
-
-[Covid19BannerBody]
-description = "Get the latest data and analysis on coronavirus (COVID-19) in the UK."
-one = "Get the latest data and analysis on coronavirus (COVID-19) in the UK."
-
 [Back]
 description = "Back"
 one = "Back"
@@ -257,10 +249,6 @@ one = "Beta"
 [BetaGeneralFeedback]
 description = "General beta banner feedback"
 one = "This is a new service – your <a href=\"/feedback\">feedback</a> will help us improve it."
-
-[BetaCMDFeedback]
-description = "This is a new way of getting data - your <a href=\"/feedback?service=cmd\">feedback</a> will help us to improve it."
-one = "This is a new way of getting data - your <a href=\"/feedback?service=cmd\">feedback</a> will help us to improve it."
 
 [BetaPreviousVersion]
 description = "You can still use the previous version"

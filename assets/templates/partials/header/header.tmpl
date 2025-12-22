@@ -6,10 +6,8 @@
     {{ if .ServiceMessage }}
        {{ template "partials/banners/service-message" . }}
     {{ end }}
-    {{ if and ( .BetaBannerEnabled ) ( not .FeatureFlags.SixteensVersion ) }}
+    {{ if .BetaBannerEnabled }}
         {{ template "partials/banners/beta" . }}
-    {{ else if .BetaBannerEnabled }}
-        {{ template "partials/banners/cmd-beta" . }}
     {{ end }}
     <div id="pagePath" class="hide">{{.URI}}</div>
     <div class="wrapper">
