@@ -1,4 +1,4 @@
-package renderror
+package renderror_test
 
 import (
 	"io"
@@ -7,6 +7,8 @@ import (
 	"testing"
 
 	render "github.com/ONSdigital/dis-design-system-go/v2"
+	"github.com/ONSdigital/dis-design-system-go/v2/middleware/renderror"
+	"github.com/ONSdigital/dis-design-system-go/v2/middleware/renderror/mocks"
 	"github.com/gorilla/mux"
 	"github.com/justinas/alice"
 	. "github.com/smartystreets/goconvey/convey"
@@ -20,7 +22,7 @@ func TestRenderr(t *testing.T) {
 			w := httptest.NewRecorder()
 			r.ServeHTTP(w, req)
 			So(w.Code, ShouldEqual, 200)
-			So(mockedRC.calls.BuildHTML, ShouldBeEmpty)
+			So(mockedRC.BuildHTMLCalls(), ShouldBeEmpty)
 		})
 
 		Convey("when getting a 401 status response ", func() {
@@ -29,8 +31,8 @@ func TestRenderr(t *testing.T) {
 			w := httptest.NewRecorder()
 			r.ServeHTTP(w, req)
 			So(w.Code, ShouldEqual, 401)
-			So(mockedRC.calls.BuildHTML, ShouldHaveLength, 1)
-			So(mockedRC.calls.BuildHTML[0].TemplateName, ShouldEqual, "error/401")
+			So(mockedRC.BuildHTMLCalls(), ShouldHaveLength, 1)
+			So(mockedRC.BuildHTMLCalls()[0].TemplateName, ShouldEqual, "error/401")
 		})
 
 		Convey("when getting a 404 status response ", func() {
@@ -39,8 +41,8 @@ func TestRenderr(t *testing.T) {
 			w := httptest.NewRecorder()
 			r.ServeHTTP(w, req)
 			So(w.Code, ShouldEqual, 404)
-			So(mockedRC.calls.BuildHTML, ShouldHaveLength, 1)
-			So(mockedRC.calls.BuildHTML[0].TemplateName, ShouldEqual, "error/404")
+			So(mockedRC.BuildHTMLCalls(), ShouldHaveLength, 1)
+			So(mockedRC.BuildHTMLCalls()[0].TemplateName, ShouldEqual, "error/404")
 		})
 
 		Convey("when getting a 500 status response ", func() {
@@ -49,8 +51,8 @@ func TestRenderr(t *testing.T) {
 			w := httptest.NewRecorder()
 			r.ServeHTTP(w, req)
 			So(w.Code, ShouldEqual, 500)
-			So(mockedRC.calls.BuildHTML, ShouldHaveLength, 1)
-			So(mockedRC.calls.BuildHTML[0].TemplateName, ShouldEqual, "error/500")
+			So(mockedRC.BuildHTMLCalls(), ShouldHaveLength, 1)
+			So(mockedRC.BuildHTMLCalls()[0].TemplateName, ShouldEqual, "error/500")
 		})
 
 		Convey("when getting an error and JSON response ", func() {
@@ -58,19 +60,19 @@ func TestRenderr(t *testing.T) {
 			req, _ := http.NewRequest("GET", "/json", http.NoBody)
 			w := httptest.NewRecorder()
 			r.ServeHTTP(w, req)
-			So(mockedRC.calls.BuildHTML, ShouldBeEmpty)
+			So(mockedRC.BuildHTMLCalls(), ShouldBeEmpty)
 		})
 	})
 }
 
-func setupTest() (http.Handler, *RenderClientMock) {
+func setupTest() (http.Handler, *mocks.RenderClientMock) {
 	router := mux.NewRouter()
-	mockedRendererClient := &RenderClientMock{
+	mockedRendererClient := &mocks.RenderClientMock{
 		BuildHTMLFunc: func(w io.Writer, status int, templateName string, pageModel interface{}) error { return nil },
 	}
 	rendC := render.New(mockedRendererClient, "", "")
 	middleware := []alice.Constructor{
-		Handler(rendC),
+		renderror.Handler(rendC),
 	}
 	testAlice := alice.New(middleware...).Then(router)
 
