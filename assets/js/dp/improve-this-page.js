@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const pageURL = window.location.href;
   const feedbackFormHeader = document.querySelector('#feedback-form-header');
   const feedbackMessage = '<span id="feedback-form-confirmation">Thank you. Your feedback will help us as we continue to improve the service.</span>';
-  const feedbackMessageError = '<span id="feedback-form-error role="alert">Something went wrong, try using our <a href="/feedback">feedback form</a>.</span>';
+  const feedbackMessageError = '<span id="feedback-form-error" role="alert">Something went wrong, try using our <a href="/feedback">feedback form</a>.</span>';
   const { title } = document;
 
   const feedbackAPIURL = document.querySelector('#feedback-api-url');
