@@ -90,46 +90,6 @@ $medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) -
   width: 100%;
 }
 
-.col-span {
-  &--lg {
-    @include breakpoint(lg) {
-      &-thirds {
-        .col {
-          &:nth-child(3n + 4) {
-            clear: left;
-          }
-        }
-      }
-      &-half {
-        .col {
-          &:nth-child(2n + 3) {
-            clear: left;
-          }
-        }
-      }
-    }
-  }
-
-  &--md {
-    @include breakpoint(md) {
-      &-thirds {
-        .col {
-          &:nth-child(3n + 4) {
-            clear: left;
-          }
-        }
-      }
-      &-half {
-        .col {
-          &:nth-child(2n + 3) {
-            clear: left;
-          }
-        }
-      }
-    }
-  }
-}
-
 .col {
   @extend %clearfix;
   width: 100%;
