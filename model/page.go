@@ -35,7 +35,6 @@ type Page struct {
 	SearchNoIndexEnabled      bool             `json:"search_no_index_enabled"`
 	NavigationContent         []NavigationItem `json:"navigation_content"`
 	PreGTMJavaScript          []template.JS    `json:"pre_gtm_javascript"`
-	RemoveGalleryBackground   bool             `json:"remove_gallery_background"`
 	Feedback                  Feedback         `json:"feedback"`
 	Enable500ErrorPageStyling bool             `json:"enable_500_error_page_styling"` // flag for hiding standard page "furniture" (header, nav, etc.)
 	ABTest
