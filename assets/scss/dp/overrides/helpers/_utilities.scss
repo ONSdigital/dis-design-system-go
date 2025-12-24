@@ -1,40 +1,38 @@
 // Utilities inherited from Sixteens design system, destined for removal
 // once the transition to the ONS design system is complete.
 
-$old-ie: false;
-
 //hiding
 
 // Hide from both screenreaders and browsers: h5bp.com/u
 .hidden {
-	display: none !important;
-	height: 0;
-	margin: 0;
-	visibility: hidden;
+    display: none !important;
+    height: 0;
+    margin: 0;
+    visibility: hidden;
 }
 
 // Hide only visually, but have it available for screenreaders: h5bp.com/v
 .visuallyhidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	border: 0;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	white-space: nowrap;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
 
-  	// Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p
-  	&.focusable:active,
-	&.focusable:focus {
-		position: static;
-		width: auto;
-		height: auto;
-		margin: 0;
-		overflow: visible;
-		clip: auto;
-	}
+    // Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p
+    &.focusable:active,
+    &.focusable:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+    }
 }
 // line-height
 
@@ -45,9 +43,7 @@ $old-ie: false;
 // margins
 
 .margin {
-
     &-top {
-
         &--negative-one-fix {
             margin-top: -1px !important;
         }
@@ -117,13 +113,10 @@ $old-ie: false;
     &--0 {
         margin: 0 !important;
     }
-
 }
 
-
-
 .flush {
-	margin: 0 !important;
+    margin: 0 !important;
 
     &--sm {
         @include breakpoint(sm) {
@@ -132,82 +125,76 @@ $old-ie: false;
     }
 
     &--padding {
-        padding: 0!important;
+        padding: 0 !important;
     }
 }
 
 .flush-col {
-	margin-left: 0 !important;
-	margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 .flush-bottom {
-	margin-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .flush-top {
-	margin-top: 0 !important;
+    margin-top: 0 !important;
 }
-
-
 
 // padding
 
 .padding {
+    &-top {
+        padding-top: ($baseline * 2) !important;
 
-	&-top {
-		padding-top: ($baseline * 2) !important;
+        &--half {
+            padding-top: ($baseline) !important;
+        }
+    }
 
-		&--half {
-			padding-top: ($baseline) !important;
-		}
-	}
+    &-right {
+        padding-right: $col !important;
 
-	&-right {
-		padding-right: $col !important;
+        &--half {
+            padding-right: calc($col / 2) !important;
+        }
 
-		&--half {
-			padding-right: calc($col / 2) !important;
-		}
+        &--none {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
 
-		&--none {
-		  padding-left: 0 !important;
-		  padding-right: 0 !important;
-		}
-	}
+    &-bottom {
+        padding-bottom: ($baseline * 2) !important;
 
-	&-bottom {
-		padding-bottom: ($baseline * 2) !important;
+        &--half {
+            padding-bottom: ($baseline) !important;
+        }
+    }
 
-		&--half {
-			padding-bottom: ($baseline) !important;
-		}
+    &-left {
+        padding-left: $col !important;
 
-	}
-
-	&-left {
-		padding-left: $col !important;
-
-		&--half {
-			padding-left: calc($col / 2) !important;
-		}
+        &--half {
+            padding-left: calc($col / 2) !important;
+        }
 
         &--triple-half {
             padding-left: ($col * 3.5) !important;
         }
 
-	  	&--none {
-		  	padding-left: 0 !important;
-		  	padding-right: 0 !important;
-		}
+        &--none {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
     }
 
     &--0 {
         padding: 0 !important;
     }
-
 }
-
 
 // display
 
@@ -216,11 +203,11 @@ $old-ie: false;
 }
 
 .inline {
-	display: inline !important;
+    display: inline !important;
 }
 
 .inline-block {
-	display: inline-block !important;
+    display: inline-block !important;
 
     // Needed for census landing page - only one medium and above
     @include breakpoint(md) {
@@ -230,17 +217,12 @@ $old-ie: false;
     }
 }
 
-
-
 .hide {
-	display: none !important;
+    display: none !important;
 
-    // Fix for old-ie hiding mobile--hide class
-    @if $old-ie == false {
-        &--sm {
-            @include breakpoint(sm) {
-                display: none !important;
-            }
+    &--sm {
+        @include breakpoint(sm) {
+            display: none !important;
         }
     }
 
@@ -266,75 +248,64 @@ $old-ie: false;
     }
 }
 
-@if $old-ie == true {
-
-	.old-ie {
-
-		&--display-block {
-			display: block !important;
-		}
-
-	}
-
-}
-
 // float
 
 .float-right {
-	float: right !important;
+    float: right !important;
 }
 
 //  New float rule that includes breakpoints
 .float-el {
-	&--right{
-		&-sm {
-			@include breakpoint(sm) {
-				float: right !important;
-			}
-		}
-		&-md {
-				@include breakpoint(md) {
-					float: right !important;
-				}
-			}
-		&-lg {
-			@include breakpoint(lg) {
-				float: right !important;
-			}
-		}
-	}
-	&--left{
-		&-sm {
-			@include breakpoint(sm) {
-				float: left !important;
-			}
-		}
-		&-md {
-				@include breakpoint(md) {
-					float: left !important;
-				}
-			}
-		&-lg {
-			@include breakpoint(lg) {
-				float: left !important;
-			}
-		}
-	}
+    &--right {
+        &-sm {
+            @include breakpoint(sm) {
+                float: right !important;
+            }
+        }
+        &-md {
+            @include breakpoint(md) {
+                float: right !important;
+            }
+        }
+        &-lg {
+            @include breakpoint(lg) {
+                float: right !important;
+            }
+        }
+    }
+    &--left {
+        &-sm {
+            @include breakpoint(sm) {
+                float: left !important;
+            }
+        }
+        &-md {
+            @include breakpoint(md) {
+                float: left !important;
+            }
+        }
+        &-lg {
+            @include breakpoint(lg) {
+                float: left !important;
+            }
+        }
+    }
 }
 
 .float-left {
-	float: left !important
+    float: left !important;
 }
-
 
 // javascript
 
-.no-js .nojs--hide, .nojs--hide {
-  display: none !important;
+.no-js .nojs--hide,
+.nojs--hide {
+    display: none !important;
 }
 
-.js .js-hidden, .js-hidden  {
-  display: none !important;
+.js .js-hidden,
+.js-hidden {
+    display: none !important;
 }
 
 .js--show {
@@ -345,34 +316,32 @@ $old-ie: false;
 //    display: none;
 //}
 
-
 // clear
 
 .clear-left {
-	clear: left !important;
+    clear: left !important;
 }
 
 .clear-right {
-	clear: right !important;
+    clear: right !important;
 }
 
 // Make an element full width
 .full-width {
-	width:100%!important;
+    width: 100% !important;
 }
 
 // hiding polyfill placeholder - temporary fix for IE8/9
 
 .placeholder {
-	display:none;
+    display: none;
 }
-
 
 // overflow
 
 .overflow {
     &--hidden {
-      overflow: hidden !important;
+        overflow: hidden !important;
     }
 }
 
@@ -385,30 +354,28 @@ $old-ie: false;
 }
 
 .vertical-align-middle {
-
     position: relative;
     &__contents {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        -webkit-transform: translateY(-50%)
+        -webkit-transform: translateY(-50%);
     }
     &__contents--md {
         @include breakpoint(md) {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            -webkit-transform: translateY(-50%)
+            -webkit-transform: translateY(-50%);
         }
     }
 }
 
-.datepicker__icon[aria-hidden*=true] {
-  visibility: initial;
+.datepicker__icon[aria-hidden*="true"] {
+    visibility: initial;
 }
 
 #viewport {
-
     &-sm {
         height: 0;
         max-height: 0;
@@ -437,11 +404,8 @@ $old-ie: false;
         @include breakpoint(lg) {
             display: block;
         }
-
     }
-
 }
-
 
 //Text transform
 
@@ -493,10 +457,10 @@ $old-ie: false;
     text-align: left !important;
 
     &--sm {
-            @include breakpoint(sm) {
-                text-align: left !important;
-            }
-          }
+        @include breakpoint(sm) {
+            text-align: left !important;
+        }
+    }
 
     &--md {
         @include breakpoint(md) {
@@ -516,17 +480,17 @@ $old-ie: false;
 }
 
 .text-wrap {
-	white-space: normal;
+    white-space: normal;
 }
 
 .text-align-top {
-	vertical-align: top;
+    vertical-align: top;
 }
 
 // Opacity value with fallback
 @mixin opacity($trans) {
     zoom: 1;
-    filter: unquote('alpha(opacity=' + ($trans * 100) + ')'); // IE6 to IE8
+    filter: unquote("alpha(opacity=" + ($trans * 100) + ")"); // IE6 to IE8
     opacity: $trans;
 }
 
@@ -548,7 +512,7 @@ $old-ie: false;
 .show-focus {
     &:focus {
         @include box-shadow(0 0 0 3px $carrot);
-        outline:0;
+        outline: 0;
     }
 }
 
@@ -559,7 +523,6 @@ $old-ie: false;
 .break-word {
     word-wrap: break-word;
 }
-
 
 // Baseline
 
@@ -579,7 +542,6 @@ $old-ie: false;
     a {
         text-decoration: underline;
     }
-
 
     p {
         margin-top: 0;
@@ -607,12 +569,11 @@ $old-ie: false;
             @extend p;
             margin-top: ($baseline * 2);
         }
-
     }
 }
 
 .markdown {
-    @include markdown
+    @include markdown;
 }
 
 @mixin font-heading-util {
@@ -628,28 +589,36 @@ $old-ie: false;
 
 @include font-heading-util;
 
-
 // Add ".adjust-font-size--n" class to container elements to increase font size on body elements
 @mixin body-adjust-util {
-   .adjust-font-size {
+    .adjust-font-size {
         @for $i from 14 through 20 {
-               &--#{$i} {
-                dd, dt, fieldset, input, label, li, p, a, span, .btn--link {
-                   font-size: $i + px;
-               }
-           }
-       }
-   }
+            &--#{$i} {
+                dd,
+                dt,
+                fieldset,
+                input,
+                label,
+                li,
+                p,
+                a,
+                span,
+                .btn--link {
+                    font-size: $i + px;
+                }
+            }
+        }
+    }
 }
 @include body-adjust-util;
 
 // Make all links within the component underlined
 .link-adjust a:not(.btn) {
-	@extend .underline-link;
-	&:focus {
-		@include box-shadow(0 0 0 3px $carrot);
-		outline: 0;
-	}
+    @extend .underline-link;
+    &:focus {
+        @include box-shadow(0 0 0 3px $carrot);
+        outline: 0;
+    }
 }
 
 // Use as alternative to overflow:hidden

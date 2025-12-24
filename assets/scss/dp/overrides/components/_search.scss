@@ -183,13 +183,11 @@
       }
     }
 
-    @if $old-ie == false {
-      @include breakpoint(sm) {
-        height: auto;
-        h1 {
-          font-size: 1.75rem;
-          line-height: ($baseline * 4);
-        }
+    @include breakpoint(sm) {
+      height: auto;
+      h1 {
+        font-size: 1.75rem;
+        line-height: ($baseline * 4);
       }
     }
   }
@@ -212,12 +210,10 @@
     overflow: initial;
     display: flex;
 
-    @if $old-ie == false {
-      @include breakpoint(sm) {
-        padding: ($baseline * 2) 0 ($baseline * 3);
-        overflow: hidden;
-        flex-wrap: wrap;
-      }
+    @include breakpoint(sm) {
+      padding: ($baseline * 2) 0 ($baseline * 3);
+      overflow: hidden;
+      flex-wrap: wrap;
     }
 
     &--no-results {
@@ -244,10 +240,8 @@
     position: relative;
     flex-grow: 1;
 
-    @if $old-ie == false {
-      @include breakpoint(sm) {
-        padding: 0 $col 12px 0;
-      }
+    @include breakpoint(sm) {
+      padding: 0 $col 12px 0;
     }
 
     &--no-results {
@@ -279,12 +273,10 @@
       position: relative;
     }
 
-    @if $old-ie == false {
-      @include breakpoint(sm) {
-        width: 80%;
-        font-size: 1.16rem;
-        padding: 12px calc($col/2) 8px calc($col/2);
-      }
+    @include breakpoint(sm) {
+      width: 80%;
+      font-size: 1.16rem;
+      padding: 12px calc($col/2) 8px calc($col/2);
     }
 
     &--body {
@@ -330,13 +322,11 @@
       justify-content: center;
     }
 
-    @if $old-ie == false {
-      @include breakpoint(sm) {
-        width: 20%;
-        font-size: 1.16rem;
-        padding-left: calc($col/2);
-        padding-right: calc($col/2);
-      }
+    @include breakpoint(sm) {
+      width: 20%;
+      font-size: 1.16rem;
+      padding-left: calc($col/2);
+      padding-right: calc($col/2);
     }
 
     &--results-page {

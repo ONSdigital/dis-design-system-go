@@ -282,10 +282,6 @@
         color: $iron-light;
         content: "+";
         left: $col;
-
-        @if $old-ie == true {
-          content: "";
-        }
       }
     }
 
@@ -430,10 +426,8 @@
   float: right;
 
   // Fix for old-ie hiding mobile--hide class
-  @if $old-ie == false {
-    @include breakpoint(sm) {
-      display: none;
-    }
+  @include breakpoint(sm) {
+    display: none;
   }
 
   &__list {
