@@ -26,7 +26,6 @@ const scripts = [
   {
     entryPoint: [
       './assets/js/import-ds.es5.js',
-      './assets/js/polyfills.js',
       './assets/js/main.js',
     ],
     outputFile: 'main.es5.js',
