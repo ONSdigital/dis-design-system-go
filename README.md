@@ -44,6 +44,10 @@ This library uses [MegaLinter](https://megalinter.io/) which allows multiple lan
 
 MegaLinter uses v2 of golangci-lint, which you will [need to install](https://golangci-lint.run/docs/welcome/install).
 
+##### dj Lint
+
+MegaLinter uses [dj Lint](https://djlint.com/) to lint the go template files (.tmpl). There is no requirement to install this linter for megalinter to work but you can install locally if you wish.
+
 ##### JS Lint
 
 MegaLinter uses [eslint](https://eslint.org/) with [Airbnb](https://airbnb.io/javascript) base configuration to lint the JS. See `.eslintrc.json` for settings.

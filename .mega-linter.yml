@@ -5,4 +5,8 @@ GOTOOLCHAIN: auto
 ENABLE_LINTERS: # If you use ENABLE_LINTERS variable, all other linters will be disabled by default
   - JAVASCRIPT_ES
   - GO_GOLANGCI_LINT
+  - HTML_DJLINT
 FLAVOR_SUGGESTIONS: false
+
+HTML_DJLINT_ARGUMENTS: ["--profile", "golang"]
+HTML_DJLINT_FILE_EXTENSIONS: [".tmpl"]
