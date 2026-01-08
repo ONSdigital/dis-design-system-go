@@ -1,7 +1,9 @@
-{{/*
+{{/* 
+    djlint:off H025 
+    Intentional orphaned markup
     Use model.ValidationErr for model binding 
     Use with fragments/field-error-bottom
-*/}}
+*/}} 
 <div
     class="ons-panel ons-panel--error ons-panel--no-title"
     id="{{- .ID -}}"
@@ -13,3 +15,4 @@
         <p class="ons-panel__error">
             <strong>{{- .Description.FuncLocalise .Language -}}</strong>
         </p>
+{{/* djlint:on */}}
