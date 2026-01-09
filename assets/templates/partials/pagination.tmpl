@@ -30,7 +30,7 @@
             aria-label="{{ $pagination.FuncPhraseGoToFirstPage $language }}"
           >1</a>
         </li>
-        <li class="ons-pagination__item ons-pagination__item--gap">&hellip;</li>
+        <li class="ons-pagination__item ons-pagination__item--gap">...</li>
       {{ end }}
       {{ range $pagination.PagesToDisplay }}
         {{ if eq .PageNumber $pagination.CurrentPage }}
@@ -51,13 +51,13 @@
               class="ons-pagination__link"
               aria-label="{{ $pagination.FuncPhrasePageNOfTotal .PageNumber $language }}"
             >
-              {{-  .PageNumber -}}
+              {{- .PageNumber -}}
             </a>
           </li>
         {{ end }}
       {{ end }}
       {{ if $pagination.FuncShowLinkToLast }}
-        <li class="ons-pagination__item ons-pagination__item--gap">&hellip;</li>
+        <li class="ons-pagination__item ons-pagination__item--gap">...</li>
         <li class="ons-pagination__item">
           <a
             href="{{(index $pagination.FirstAndLastPages 1).URL}}"

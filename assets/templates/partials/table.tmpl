@@ -43,6 +43,9 @@
           {{ end }}
         </tr>
       </thead>
+      {{/* djlint:off H025 
+        False positive - markup is not orphaned
+      */}}
       <tbody class="ons-table__body">
         {{ range $tr := .TableRows }}
           <tr
@@ -82,13 +85,14 @@
         {{ end }}
       </tbody>
       {{ if .TableFooters }}
-        <tfoot class="ons-table__foot">
-          <tr class="ons-table__row">
-            {{ range $tfoot := .TableFooters }}
-              <td class="ons-table__cell ons-u-fs-s">{{ $tfoot.Value }}</td>
-            {{ end }}
-          </tr>
-        </tfoot>
+      <tfoot class="ons-table__foot">
+        <tr class="ons-table__row">
+          {{ range $tfoot := .TableFooters }}
+          <td class="ons-table__cell ons-u-fs-s">{{ $tfoot.Value }}</td>
+          {{ end }}
+        </tr>
+      </tfoot>
+      {{/* djlint:on */}}
       {{ end }}
     </table>
 {{ if .FuncContainsVariant "scrollable" }}
