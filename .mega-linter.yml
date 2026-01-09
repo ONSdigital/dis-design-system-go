@@ -8,5 +8,5 @@ ENABLE_LINTERS: # If you use ENABLE_LINTERS variable, all other linters will be 
   - HTML_DJLINT
 FLAVOR_SUGGESTIONS: false
 
-HTML_DJLINT_ARGUMENTS: ["--profile", "golang"]
+HTML_DJLINT_ARGUMENTS: ["--profile", "golang", "-i", "H031,H006"] # Ignore H031: "Consider adding meta keywords", Ignore H006: "img tag should have height and width attributes"
 HTML_DJLINT_FILE_EXTENSIONS: [".tmpl"]
