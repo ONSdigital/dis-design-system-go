@@ -44,9 +44,13 @@ This library uses [MegaLinter](https://megalinter.io/) which allows multiple lan
 
 MegaLinter uses v2 of golangci-lint, which you will [need to install](https://golangci-lint.run/docs/welcome/install).
 
-##### dj Lint
+##### HTML Lint
 
 MegaLinter uses [dj Lint](https://djlint.com/) to lint the go template files (.tmpl). There is no requirement to install this linter for megalinter to work but you can install locally if you wish.
+
+##### CSS lint
+
+MegaLinter uses [stylelint](https://stylelint.io/) to lint the css. The supplementary plugin [stylelint-selector-bem-pattern](https://www.npmjs.com/package/stylelint-selector-bem-pattern) is used to parse [BEM](https://css-tricks.com/bem-101/) syntax which is ubiquitous within this library and the ONS' design system. See `.stylelintrc.json` for settings.
 
 ##### JS Lint
 
