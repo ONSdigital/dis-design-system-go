@@ -1,9 +1,9 @@
-// Utilities inherited from Sixteens design system, destined for removal
-// once the transition to the ONS design system is complete.
+/* Utilities inherited from Sixteens design system, destined for removal
+once the transition to the ONS design system is complete. */
 
-//hiding
+/* hiding */
 
-// Hide from both screenreaders and browsers: h5bp.com/u
+/* Hide from both screenreaders and browsers: h5bp.com/u */
 .hidden {
     display: none !important;
     height: 0;
@@ -11,7 +11,7 @@
     visibility: hidden;
 }
 
-// Hide only visually, but have it available for screenreaders: h5bp.com/v
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
 .visuallyhidden {
     position: absolute;
     width: 1px;
@@ -23,7 +23,7 @@
     clip: rect(0 0 0 0);
     white-space: nowrap;
 
-    // Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p
+    /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
     &.focusable:active,
     &.focusable:focus {
         position: static;
@@ -34,14 +34,13 @@
         clip: auto;
     }
 }
-// line-height
 
+/* line-height */
 .default-line-height {
     line-height: $base-line-height;
 }
 
-// margins
-
+/* margins */
 .margin {
     &-top {
         &--negative-one-fix {
@@ -142,8 +141,7 @@
     margin-top: 0 !important;
 }
 
-// padding
-
+/* padding */
 .padding {
     &-top {
         padding-top: ($baseline * 2) !important;
@@ -196,8 +194,7 @@
     }
 }
 
-// display
-
+/* display */
 .block {
     display: block !important;
 }
@@ -209,7 +206,7 @@
 .inline-block {
     display: inline-block !important;
 
-    // Needed for census landing page - only one medium and above
+    /* Needed for census landing page - only one medium and above */
     @include breakpoint(md) {
         &--md {
             display: inline-block !important;
@@ -248,13 +245,12 @@
     }
 }
 
-// float
-
+/* float */
 .float-right {
     float: right !important;
 }
 
-//  New float rule that includes breakpoints
+/* New float rule that includes breakpoints */
 .float-el {
     &--right {
         &-sm {
@@ -296,8 +292,7 @@
     float: left !important;
 }
 
-// javascript
-
+/* javascript */
 .no-js .nojs--hide,
 .nojs--hide {
     display: none !important;
@@ -312,12 +307,7 @@
     display: none;
 }
 
-//.js-enhance--show {
-//    display: none;
-//}
-
-// clear
-
+/* clear */
 .clear-left {
     clear: left !important;
 }
@@ -326,19 +316,17 @@
     clear: right !important;
 }
 
-// Make an element full width
+/* Make an element full width */
 .full-width {
     width: 100% !important;
 }
 
-// hiding polyfill placeholder - temporary fix for IE8/9
-
+/* hiding polyfill placeholder - temporary fix for IE8/9 */
 .placeholder {
     display: none;
 }
 
-// overflow
-
+/* overflow */
 .overflow {
     &--hidden {
         overflow: hidden !important;
@@ -407,8 +395,7 @@
     }
 }
 
-//Text transform
-
+/* Text transform */
 .lowercase {
     text-transform: lowercase;
 }
@@ -487,28 +474,28 @@
     vertical-align: top;
 }
 
-// Opacity value with fallback
+/* Opacity value with fallback */
 @mixin opacity($trans) {
     zoom: 1;
-    filter: unquote("alpha(opacity=" + ($trans * 100) + ")"); // IE6 to IE8
+    filter: unquote("alpha(opacity=" + ($trans * 100) + ")"); /* IE6 to IE8 */
     opacity: $trans;
 }
 
-// Simple border radius
+/* Simple border radius */
 @mixin border-radius($radius) {
-    -webkit-border-radius: $radius; // Chrome 4.0, Safari 3.1 to 4.0, Mobile Safari 3.2, Android Browser 2.1
-    -moz-border-radius: $radius; // Firefox 2.0 to 3.6
+    -webkit-border-radius: $radius; /* Chrome 4.0, Safari 3.1 to 4.0, Mobile Safari 3.2, Android Browser 2.1 */
+    -moz-border-radius: $radius; /* Firefox 2.0 to 3.6 */
     border-radius: $radius;
 }
 
-// Simple box shadow
+/* Simple box shadow */
 @mixin box-shadow($shadow) {
-    -webkit-box-shadow: $shadow; // Chrome 4.0 to 9.0, Safari 3.1 to 5.0, Mobile Safari 3.2 to 4.3, Android Browser 2.1 to 3.0
-    -moz-box-shadow: $shadow; // Firefox 3.5 to 3.6
+    -webkit-box-shadow: $shadow; /* Chrome 4.0 to 9.0, Safari 3.1 to 5.0, Mobile Safari 3.2 to 4.3, Android Browser 2.1 to 3.0 */
+    -moz-box-shadow: $shadow; /* Firefox 3.5 to 3.6 */
     box-shadow: $shadow;
 }
 
-// Remove the defauly focus and use our own.
+/* Remove the default focus and use our own. */
 .show-focus {
     &:focus {
         @include box-shadow(0 0 0 3px $carrot);
@@ -524,14 +511,14 @@
     word-wrap: break-word;
 }
 
-// Baseline
+/* Baseline */
 
-// Used on inline elements that aren't on grid because they're not in a baselined element (eg an anchor not in a <p>)
+/* Used on inline elements that aren't on grid because they're not in a baselined element (eg an anchor not in a <p>) */
 .baseline {
     padding: 3px 0 5px 0;
 }
 
-// Mixin for silent styling to bunch up spacing between elements in big blocks of text (ie markdown)
+/* Mixin for silent styling to bunch up spacing between elements in big blocks of text (ie markdown) */
 @mixin markdown {
     overflow: visible;
 
@@ -558,13 +545,13 @@
     li {
         margin: 0;
 
-        // li with only one p shouldn't have padding (spacing looks excessive)
+        /* li with only one p shouldn't have padding (spacing looks excessive) */
         p:first-of-type {
             margin: 0;
             padding: 0;
         }
 
-        // to offset above styling second p in an li should have extra margin on the top (giving it the same styling as an ordinary p)
+        /* to offset above styling second p in an li should have extra margin on the top (giving it the same styling as an ordinary p) */
         p:nth-of-type(2) {
             @extend p;
             margin-top: ($baseline * 2);
@@ -579,7 +566,6 @@
 @mixin font-heading-util {
     .font-size {
         @for $i from 1 through 6 {
-            //
             &--h#{$i} {
                 @extend h#{$i};
             }
@@ -589,7 +575,7 @@
 
 @include font-heading-util;
 
-// Add ".adjust-font-size--n" class to container elements to increase font size on body elements
+/* Add ".adjust-font-size--n" class to container elements to increase font size on body elements */
 @mixin body-adjust-util {
     .adjust-font-size {
         @for $i from 14 through 20 {
@@ -612,7 +598,7 @@
 }
 @include body-adjust-util;
 
-// Make all links within the component underlined
+/* Make all links within the component underlined */
 .link-adjust a:not(.btn) {
     @extend .underline-link;
     &:focus {
@@ -621,7 +607,7 @@
     }
 }
 
-// Use as alternative to overflow:hidden
+/* Use as alternative to overflow:hidden */
 %clearfix {
     & {
         *zoom: 1;
@@ -635,7 +621,7 @@
         clear: both;
     }
 }
-// Use as alternative to overflow:hidden
+/* Use as alternative to overflow:hidden */
 .clearfix {
     @extend %clearfix;
 }

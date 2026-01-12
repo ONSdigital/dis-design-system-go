@@ -2,17 +2,17 @@
 
 @include normalize();
 
-// ONS Design System Foundational elements and utilities
+/* ONS Design System Foundational elements and utilities */
 @import '../../node_modules/@ons/design-system/scss/vars/index';
 @import '../../node_modules/@ons/design-system/scss/helpers/index';
 @import '../../node_modules/@ons/design-system/scss/base/index';
 @import '../../node_modules/@ons/design-system/scss/objects/index';
 @import '../../node_modules/@ons/design-system/scss/utilities/index';
 
-// Import census colours for hero banner
+/* Import census colours for hero banner */
 @import '../../node_modules/@ons/design-system/scss/settings/census';
 
-// ONS Design System Components relevant to the ONS Website
+/* ONS Design System Components relevant to the ONS Website */
 @import '../../node_modules/@ons/design-system/components/autosuggest/autosuggest';
 @import '../../node_modules/@ons/design-system/components/breadcrumbs/breadcrumbs';
 @import '../../node_modules/@ons/design-system/components/button/button';
@@ -62,17 +62,17 @@
 @import '../../node_modules/@ons/design-system/components/upload/upload';
 @import '../../node_modules/@ons/design-system/components/video/video';
 
-// ONS Design System Overrides
-// Right to left
+/* ONS Design System Overrides
+Right to left */
 @import '../../node_modules/@ons/design-system/scss/overrides/rtl.scss';
 
-// High Contrast Mode
+/* High Contrast Mode */
 @import '../../node_modules/@ons/design-system/scss/overrides/hcm.scss';
 
 
-// Digital Publishing specific styles, utilities and grid system. This is a temporary
-// inclusion to accommodate specific styling that is present on the website, but not in
-// the design system. This includes cookies banner and the site header.
-// Styling dependencies such as breakpoint
+/* Digital Publishing specific styles, utilities and grid system. This is a temporary
+inclusion to accommodate specific styling that is present on the website, but not in
+the design system. This includes cookies banner and the site header.
+Styling dependencies such as breakpoint */
 
 @import './dp/styles';

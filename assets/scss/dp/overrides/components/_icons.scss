@@ -1,7 +1,7 @@
 $png: "https://cdn.ons.gov.uk/assets/images/icon-sprite/v2/icon-sprite.png";
 $svg: "https://cdn.ons.gov.uk/assets/images/icon-sprite/v2/icon-sprite.svg";
 
-// Don't show icons on print - stops conflicts with print :after for links too
+/* Don't show icons on print - stops conflicts with print :after for links too */
 @media screen {
     .icon {
         background-image: url($svg);

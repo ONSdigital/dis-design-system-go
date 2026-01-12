@@ -1,6 +1,6 @@
-//_grid.scss
+/* _grid.scss */
 
-//--[vars]--
+/*--[vars]--*/
 
 $col: 16px;
 $gutter: 16px;
@@ -11,7 +11,7 @@ $medium-complex-grid-cols: 47;
 $large: $large-complex-grid-cols * $col;
 $medium: $medium-complex-grid-cols * $col;
 
-//simple cols
+/* simple cols */
 $large-cols-one: $large-complex-grid-cols * $col;
 $large-cols-half: calc(calc($large-complex-grid-cols - 1) / 2) * $col;
 $large-cols-one-third: calc(calc($large-complex-grid-cols - 2) / 3) * $col;
@@ -29,13 +29,12 @@ $medium-cols-one-quarter: calc(calc($medium-complex-grid-cols - 3) / 4) * $col;
 $medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) -
   $medium-cols-one-quarter;
 
-//--[vars end]--
+/*--[vars end]--*/
 
-//--[mixins]--
+/*--[mixins]--*/
 
-// Breakpoint mixin in _breakpoints.scss
-
-// Generate the large columns
+/* Breakpoint mixin in _breakpoints.scss 
+Generate the large columns */
 @mixin make-lg-column($columns) {
   position: relative;
   min-height: 1px;
@@ -77,9 +76,9 @@ $medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) -
   }
 }
 
-//--[mixins end]--
+/*--[mixins end]--*/
 
-//--[classes]--
+/*--[classes]--*/
 .wrapper {
   @extend %clearfix;
   @extend .ons-container;
@@ -139,7 +138,7 @@ $medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) -
       }
     }
 
-    //call complex cols last so the css gets generated last and they take precedence
+    /* call complex cols last so the css gets generated last and they take precedence */
     @include medium-cols-complex;
     @include medium-cols-offset;
   }
@@ -187,10 +186,10 @@ $medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) -
       }
     }
 
-    //call complex cols last so the css gets generated last and they take precedence
+    /* call complex cols last so the css gets generated last and they take precedence */
     @include large-cols-complex;
     @include large-cols-offset;
   }
 }
 
-//--[classes end]--
+/*--[classes end]--*/

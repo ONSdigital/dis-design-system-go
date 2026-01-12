@@ -7,7 +7,7 @@
     max-width: 55%;
     float: right;
 
-    // Language selection
+    /* Language selection */
     & .language {
       font-size: 12px;
       margin-bottom: 0.25rem;
@@ -25,9 +25,9 @@
         display: inline;
       }
 
-      // Styles for js enhanced <select> form
+      /* Styles for js enhanced <select> form */
       &--js {
-        display: none; // Hide until enhanced and shown on page
+        display: none; /* Hide until enhanced and shown on page */
         min-width: ($col * 10);
 
         &__label {
@@ -35,18 +35,18 @@
         }
 
         &__select {
-          padding-bottom: 2px; // Fixes text being 1 pixel below label text
+          padding-bottom: 2px; /* Fixes text being 1 pixel below label text */
           float: right;
           border: 0 !important;
           font-size: 12px;
           height: 24px;
           color: $matisse;
-          -webkit-appearance: none; /*Removes default chrome and safari style*/
-          -moz-appearance: none; /* Removes Default Firefox style*/
-          text-indent: 0.01px; /* Removes default arrow from firefox*/
-          text-overflow: ""; /*Removes default arrow from firefox*/
+          -webkit-appearance: none; /* Removes default chrome and safari style */
+          -moz-appearance: none; /* Removes Default Firefox style */
+          text-indent: 0.01px; /* Removes default arrow from firefox */
+          text-overflow: ""; /* Removes default arrow from firefox */
 
-          // IE10+ fixes
+          /* IE10+ fixes */
           &::-ms-expand {
             display: none;
           }
