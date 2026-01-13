@@ -9,10 +9,10 @@ button {
     display: inline-block;
     width: auto;
     cursor: pointer;
-    padding: 6px $col 10px $col;
+    padding: 6px $col 10px;
     border: 0 none;
     text-align: center;
-    -webkit-appearance: none;
+    appearance: none;
     transition: background-color 0.25s ease-out;
     text-decoration: none;
     line-height: $base-line-height;
@@ -29,6 +29,7 @@ button {
 
     &--primary-disabled {
         opacity: 0.7;
+
         &:hover,
         &:focus {
             background-color: $primary;
@@ -100,16 +101,18 @@ button {
             cursor: default;
         }
     }
+
     &--focus {
       &:focus {
           box-shadow: 0 0 0 3px $carrot;
           outline: 0;
       }
     }
+
     &--link {
         background: transparent;
         color: $matisse;
-        padding: 6px 0 2px 0;
+        padding: 6px 0 2px;
 
         &:hover {
             text-decoration: underline;
@@ -125,6 +128,7 @@ button {
             color: $ship-grey;
             cursor: text;
             text-decoration: none!important;
+
             &:hover, &:focus {
                 text-decoration: none;
                 outline: 0;
@@ -164,7 +168,6 @@ button {
     }
 
     &--full-width {
-
         display: block;
         width: 100%;
     }
@@ -190,7 +193,7 @@ button {
     }
 
     &--simple {
-        padding: 10px 0 6px 0;
+        padding: 10px 0 6px;
         color: $matisse;
         background-color: transparent;
         text-align: left;
@@ -219,12 +222,12 @@ button {
     }
 
     legend {
-        padding: 6px 0 10px 0;
+        padding: 6px 0 10px;
     }
 
     input {
-        height: 0px;
-        width: 0px;
+        height: 0;
+        width: 0;
         position: absolute;
         left: -100px;
     }

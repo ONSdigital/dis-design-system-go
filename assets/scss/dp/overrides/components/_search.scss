@@ -26,10 +26,10 @@
 
   &__summary {
     width: 100%;
-    padding: ($baseline * 3) 0 ($baseline * 3);
+    padding: ($baseline * 3) 0;
 
     @include breakpoint(sm) {
-      padding: ($baseline * 2) 0 ($baseline * 2);
+      padding: ($baseline * 2) 0;
     }
 
     .base-font {
@@ -42,6 +42,7 @@
 
     &__query {
       @extend .base-font;
+
       font-weight: 700;
     }
 
@@ -52,6 +53,7 @@
 
     &__generic {
       @extend .base-font;
+
       font-weight: 300;
     }
   }
@@ -62,8 +64,7 @@
     &__mobile-filter-toggle {
       width: 100%;
       text-align: center;
-      display: inline-block;
-      margin: ($baseline * 2) 0 0 0;
+      margin: ($baseline * 2) 0 0;
       display: none;
 
       @include breakpoint(sm) {
@@ -88,8 +89,7 @@
         background: white;
         padding: 40px;
         z-index: 9999999999;
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow: hidden auto;
       }
     }
 
@@ -157,7 +157,7 @@
 
     h1 {
       color: $iron-light;
-      margin: ($baseline * 2) 0 $baseline 0;
+      margin: ($baseline * 2) 0 $baseline;
     }
 
     &__item {
@@ -185,6 +185,7 @@
 
     @include breakpoint(sm) {
       height: auto;
+
       h1 {
         font-size: 1.75rem;
         line-height: ($baseline * 4);
@@ -217,12 +218,11 @@
     }
 
     &--no-results {
-      display: initial;
-      margin: 0 0 ($baseline * 2) 0;
+      margin: 0 0 ($baseline * 2);
       padding: 0;
       display: inline-block;
-
       margin-bottom: 10rem;
+
       @include breakpoint(sm) {
         margin-bottom: 5rem;
       }
@@ -248,7 +248,7 @@
       color: initial;
       font-weight: 600;
       display: block;
-      margin: 0 0 $baseline 0;
+      margin: 0 0 $baseline;
     }
   }
 
@@ -276,7 +276,7 @@
     @include breakpoint(sm) {
       width: 80%;
       font-size: 1.16rem;
-      padding: 12px calc($col/2) 8px calc($col/2);
+      padding: 12px calc($col/2) 8px;
     }
 
     &--body {
@@ -353,6 +353,6 @@
 [type="search"] {
   &::-webkit-search-cancel-button,
   ::-webkit-search-decoration {
-    -webkit-appearance: auto;
+    appearance: auto;
   }
 }

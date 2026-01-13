@@ -12,6 +12,7 @@
                     }
                 }
             }
+
             @for $i from 0 through 8 {
                 @include breakpoint(md) {
                     &-md--#{$i} {
@@ -19,6 +20,7 @@
                     }
                 }
             }
+
             @for $i from 0 through 8 {
                 @include breakpoint(lg) {
                     &-lg--#{$i} {
@@ -26,15 +28,18 @@
                     }
                 }
             }
+
             @for $i from 0 through 8 {
                 &--#{$i} {
                     margin-top: ($baseline * $i) !important;
                 }
             }
+
             &--auto {
                 margin-top: auto;
             }
         }
+
         &-bottom {
             @for $i from 0 through 8 {
                 @include breakpoint(sm) {
@@ -43,6 +48,7 @@
                     }
                 }
             }
+
             @for $i from 0 through 8 {
                 @include breakpoint(md) {
                     &-md--#{$i} {
@@ -50,6 +56,7 @@
                     }
                 }
             }
+
             @for $i from 0 through 8 {
                 @include breakpoint(lg) {
                     &-lg--#{$i} {
@@ -57,11 +64,13 @@
                     }
                 }
             }
+
             @for $i from 0 through 8 {
                 &--#{$i} {
                     margin-bottom: ($baseline * $i) !important;
                 }
             }
+
             &--auto {
                 margin-bottom: auto;
             }
@@ -75,6 +84,7 @@
                     }
                 }
             }
+
             @for $i from 0 through 59 {
                 @include breakpoint(md) {
                     &-md--#{$i} {
@@ -82,6 +92,7 @@
                     }
                 }
             }
+
             @for $i from 0 through 59 {
                 @include breakpoint(lg) {
                     &-lg--#{$i} {
@@ -89,15 +100,18 @@
                     }
                 }
             }
+
             @for $i from 0 through 59 {
                 &--#{$i} {
                     margin-left: ($col * $i) !important;
                 }
             }
+
             &--auto {
                 margin-left: auto;
             }
         }
+
         &-right {
             @for $i from 0 through 59 {
                 @include breakpoint(sm) {
@@ -106,6 +120,7 @@
                     }
                 }
             }
+
             @for $i from 0 through 59 {
                 @include breakpoint(md) {
                     &-md--#{$i} {
@@ -113,6 +128,7 @@
                     }
                 }
             }
+
             @for $i from 0 through 59 {
                 @include breakpoint(lg) {
                     &-lg--#{$i} {
@@ -120,11 +136,13 @@
                     }
                 }
             }
+
             @for $i from 0 through 59 {
                 &--#{$i} {
                     margin-right: ($col * $i) !important;
                 }
             }
+
             &--auto {
                 margin-right: auto;
             }

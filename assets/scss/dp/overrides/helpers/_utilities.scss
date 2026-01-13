@@ -50,6 +50,7 @@ once the transition to the ONS design system is complete. */
         &--negative-two-fix {
             margin-top: -2px !important;
         }
+
         margin-top: ($baseline * 2) !important;
 
         &--half {
@@ -101,9 +102,11 @@ once the transition to the ONS design system is complete. */
         &--negative-one-fix {
             margin-left: -1px !important;
         }
+
         &--half {
             margin-left: calc($col / 2) !important;
         }
+
         &--double {
             margin-left: ($col * 2) !important;
         }
@@ -233,6 +236,7 @@ once the transition to the ONS design system is complete. */
         @include breakpoint(md) {
             display: none;
         }
+
         @include breakpoint(lg) {
             display: block;
         }
@@ -258,28 +262,33 @@ once the transition to the ONS design system is complete. */
                 float: right !important;
             }
         }
+
         &-md {
             @include breakpoint(md) {
                 float: right !important;
             }
         }
+
         &-lg {
             @include breakpoint(lg) {
                 float: right !important;
             }
         }
     }
+
     &--left {
         &-sm {
             @include breakpoint(sm) {
                 float: left !important;
             }
         }
+
         &-md {
             @include breakpoint(md) {
                 float: left !important;
             }
         }
+
         &-lg {
             @include breakpoint(lg) {
                 float: left !important;
@@ -343,18 +352,20 @@ once the transition to the ONS design system is complete. */
 
 .vertical-align-middle {
     position: relative;
+
     &__contents {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
     }
+
     &__contents--md {
         @include breakpoint(md) {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
         }
     }
 }
@@ -404,7 +415,7 @@ once the transition to the ONS design system is complete. */
     text-transform: uppercase;
 }
 
-.capitalise:first-letter {
+.capitalise::first-letter {
     text-transform: capitalize;
 }
 
@@ -483,15 +494,11 @@ once the transition to the ONS design system is complete. */
 
 /* Simple border radius */
 @mixin border-radius($radius) {
-    -webkit-border-radius: $radius; /* Chrome 4.0, Safari 3.1 to 4.0, Mobile Safari 3.2, Android Browser 2.1 */
-    -moz-border-radius: $radius; /* Firefox 2.0 to 3.6 */
     border-radius: $radius;
 }
 
 /* Simple box shadow */
 @mixin box-shadow($shadow) {
-    -webkit-box-shadow: $shadow; /* Chrome 4.0 to 9.0, Safari 3.1 to 5.0, Mobile Safari 3.2 to 4.3, Android Browser 2.1 to 3.0 */
-    -moz-box-shadow: $shadow; /* Firefox 3.5 to 3.6 */
     box-shadow: $shadow;
 }
 
@@ -499,6 +506,7 @@ once the transition to the ONS design system is complete. */
 .show-focus {
     &:focus {
         @include box-shadow(0 0 0 3px $carrot);
+
         outline: 0;
     }
 }
@@ -508,14 +516,14 @@ once the transition to the ONS design system is complete. */
 }
 
 .break-word {
-    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Baseline */
 
 /* Used on inline elements that aren't on grid because they're not in a baselined element (eg an anchor not in a <p>) */
 .baseline {
-    padding: 3px 0 5px 0;
+    padding: 3px 0 5px;
 }
 
 /* Mixin for silent styling to bunch up spacing between elements in big blocks of text (ie markdown) */
@@ -554,6 +562,7 @@ once the transition to the ONS design system is complete. */
         /* to offset above styling second p in an li should have extra margin on the top (giving it the same styling as an ordinary p) */
         p:nth-of-type(2) {
             @extend p;
+
             margin-top: ($baseline * 2);
         }
     }
@@ -596,13 +605,16 @@ once the transition to the ONS design system is complete. */
         }
     }
 }
+
 @include body-adjust-util;
 
 /* Make all links within the component underlined */
 .link-adjust a:not(.btn) {
     @extend .underline-link;
+
     &:focus {
         @include box-shadow(0 0 0 3px $carrot);
+
         outline: 0;
     }
 }
@@ -612,15 +624,18 @@ once the transition to the ONS design system is complete. */
     & {
         *zoom: 1;
     }
-    &:before,
-    &:after {
+
+    &::before,
+    &::after {
         content: "";
         display: table;
     }
-    &:after {
+
+    &::after {
         clear: both;
     }
 }
+
 /* Use as alternative to overflow:hidden */
 .clearfix {
     @extend %clearfix;

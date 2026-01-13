@@ -1,13 +1,11 @@
 /* _grid.scss */
 
-/*--[vars]--*/
+/* --[vars]-- */
 
 $col: 16px;
 $gutter: 16px;
-
 $large-complex-grid-cols: 59;
 $medium-complex-grid-cols: 47;
-
 $large: $large-complex-grid-cols * $col;
 $medium: $medium-complex-grid-cols * $col;
 
@@ -20,7 +18,6 @@ $large-cols-two-thirds: (($large-complex-grid-cols - 1) * $col) -
 $large-cols-one-quarter: calc(calc($large-complex-grid-cols - 3) / 4) * $col;
 $large-cols-three-quarters: (($large-complex-grid-cols - 1) * $col) -
   $large-cols-one-quarter;
-
 $medium-cols-one: $medium-complex-grid-cols * $col;
 $medium-cols-half: calc(calc($medium-complex-grid-cols - 1) / 2) * $col;
 $medium-cols-one-third: calc(calc($medium-complex-grid-cols - 2) / 3) * $col;
@@ -29,9 +26,9 @@ $medium-cols-one-quarter: calc(calc($medium-complex-grid-cols - 3) / 4) * $col;
 $medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) -
   $medium-cols-one-quarter;
 
-/*--[vars end]--*/
+/* --[vars end]-- */
 
-/*--[mixins]--*/
+/* --[mixins]-- */
 
 /* Breakpoint mixin in _breakpoints.scss 
 Generate the large columns */
@@ -76,9 +73,9 @@ Generate the large columns */
   }
 }
 
-/*--[mixins end]--*/
+/* --[mixins end]-- */
 
-/*--[classes]--*/
+/* --[classes]-- */
 .wrapper {
   @extend %clearfix;
   @extend .ons-container;
@@ -86,11 +83,13 @@ Generate the large columns */
 
 .col-wrap {
   @extend %clearfix;
+
   width: 100%;
 }
 
 .col {
   @extend %clearfix;
+
   width: 100%;
   float: left;
 
@@ -126,6 +125,7 @@ Generate the large columns */
       &-one-quarter {
         width: $medium-cols-one-quarter;
       }
+
       &-three-quarters {
         width: $medium-cols-three-quarters;
       }
@@ -164,6 +164,7 @@ Generate the large columns */
         width: $large-cols-one-third;
       }
     }
+
     &--lg {
       &-two-thirds {
         width: $large-cols-two-thirds;
@@ -174,6 +175,7 @@ Generate the large columns */
       &-one-quarter {
         width: $large-cols-one-quarter;
       }
+
       &-three-quarters {
         width: $large-cols-three-quarters;
       }
@@ -192,4 +194,4 @@ Generate the large columns */
   }
 }
 
-/*--[classes end]--*/
+/* --[classes end]-- */

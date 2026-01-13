@@ -1,6 +1,5 @@
 @import '../../node_modules/normalize-scss/sass/normalize';
-
-@include normalize();
+@include normalize;
 
 /* ONS Design System Foundational elements and utilities */
 @import '../../node_modules/@ons/design-system/scss/vars/index';
@@ -64,10 +63,10 @@
 
 /* ONS Design System Overrides
 Right to left */
-@import '../../node_modules/@ons/design-system/scss/overrides/rtl.scss';
+@import '../../node_modules/@ons/design-system/scss/overrides/rtl';
 
 /* High Contrast Mode */
-@import '../../node_modules/@ons/design-system/scss/overrides/hcm.scss';
+@import '../../node_modules/@ons/design-system/scss/overrides/hcm';
 
 
 /* Digital Publishing specific styles, utilities and grid system. This is a temporary

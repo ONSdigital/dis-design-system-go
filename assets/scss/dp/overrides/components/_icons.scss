@@ -6,7 +6,6 @@ $svg: "https://cdn.ons.gov.uk/assets/images/icon-sprite/v2/icon-sprite.svg";
     .icon {
         background-image: url($svg);
         background-repeat: no-repeat;
-
         display: inline-block;
         background-size: 300px 1000px;
         height: 36px;
