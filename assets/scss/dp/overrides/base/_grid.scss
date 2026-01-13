@@ -19,7 +19,7 @@ $large-cols-three-quarters: (($large-complex-grid-cols - 1) * $col) - $large-col
 $medium-cols-one: $medium-complex-grid-cols * $col;
 $medium-cols-half: calc(calc($medium-complex-grid-cols - 1) / 2) * $col;
 $medium-cols-one-third: calc(calc($medium-complex-grid-cols - 2) / 3) * $col;
-$medium-cols-two-thirds: (($medium-complex-grid-cols - 1) * $col)- $medium-cols-one-third;
+$medium-cols-two-thirds: (($medium-complex-grid-cols - 1) * $col) - $medium-cols-one-third;
 $medium-cols-one-quarter: calc(calc($medium-complex-grid-cols - 3) / 4) * $col;
 $medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) - $medium-cols-one-quarter;
 
