@@ -357,14 +357,12 @@ once the transition to the ONS design system is complete. */
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        transform: translateY(-50%);
     }
 
     &__contents--md {
         @include breakpoint(md) {
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
             transform: translateY(-50%);
         }
     }
