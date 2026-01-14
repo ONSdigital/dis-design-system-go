@@ -58,7 +58,7 @@ MegaLinter uses [eslint](https://eslint.org/) with [Airbnb](https://airbnb.io/ja
 
 ##### Fix
 
-MegaLinter can fix some linting issues automatically. Autofixes are enabled for local JS linting. To automatically apply fixes, pass in the `APPLY_FIXES` environment variable into the runner e.g. `npx mega-linter-runner -e 'APPLY_FIXES=JAVASCRIPT_ES'`. See [makefile](Makefile) for current setup.
+MegaLinter can fix some linting issues automatically. Autofixes are enabled for local JS and SCSS/CSS linting. To automatically apply fixes, pass in the `APPLY_FIXES` environment variable into the runner e.g. `npx mega-linter-runner -e 'APPLY_FIXES=JAVASCRIPT_ES'`. See [makefile](Makefile) for current setup.
 
 > [!NOTE]
 > Autofixes should not be enabled in CI
