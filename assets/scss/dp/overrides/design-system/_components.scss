@@ -28,7 +28,9 @@
     padding: 1px;
 
     &:focus-within {
-      box-shadow: 0 0 0 3px $pineapple-yellow, inset 0 0 0 1px $mine-shaft;
+      box-shadow:
+        0 0 0 3px $pineapple-yellow,
+        inset 0 0 0 1px $mine-shaft;
       outline: none;
     }
 
@@ -113,7 +115,7 @@
 
   &-sticker {
     background-color: $color-grey-15;
-    border: 1px solid  $color-grey-35;
+    border: 1px solid $color-grey-35;
     padding: 0.3rem 0.5rem;
   }
 
@@ -154,7 +156,8 @@
     gap: 1rem;
 
     &__link {
-      word-break: break-word;
+      overflow-wrap: anywhere;
+      word-break: normal;
     }
   }
 
@@ -193,16 +196,16 @@
 
     &--before {
       &::before {
-        @include spinner
+        @include spinner;
       }
     }
 
     &--after {
       &::after {
-        @include spinner
+        @include spinner;
       }
     }
-    
+
     &__hidden-text {
       position: absolute;
       overflow: hidden;
@@ -218,7 +221,7 @@
   &-badge {
     display: flex;
     gap: 0.5rem;
-  
+
     &__item {
       display: flex;
       align-items: center;
