@@ -34,7 +34,7 @@
       padding: ($baseline * 2) 0;
     }
 
-    .base-font {
+    .base-font, %base-font {
       font-size: 2rem;
 
       @include breakpoint(sm) {
@@ -43,7 +43,7 @@
     }
 
     &__query {
-      @extend .base-font;
+      @extend %base-font;
 
       font-weight: 700;
     }
@@ -54,7 +54,7 @@
     }
 
     &__generic {
-      @extend .base-font;
+      @extend %base-font;
 
       font-weight: 300;
     }

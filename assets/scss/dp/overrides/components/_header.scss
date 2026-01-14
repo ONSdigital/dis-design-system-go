@@ -185,7 +185,7 @@
     }
   }
 
-  &__child-item {
+  &__child-item, %primary-nav__child-item {
     display: block;
     margin: 0;
     padding: 0;
@@ -195,7 +195,7 @@
     }
   }
 
-  &__child-link {
+  &__child-link, %primary-nav__child-link {
     display: block;
     color: $white;
     text-decoration: none;
@@ -260,10 +260,10 @@
 }
 
 .nav__top-level-duplicate {
-  @extend .primary-nav__child-item;
+  @extend %primary-nav__child-item;
 
   & > a {
-    @extend .primary-nav__child-link;
+    @extend %primary-nav__child-link;
   }
 
   @include breakpoint(md) {

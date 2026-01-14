@@ -75,7 +75,9 @@ Generate the large columns */
 /* --[classes]-- */
 .wrapper {
   @extend %clearfix;
+  /* stylelint-disable scss/at-extend-no-missing-placeholder -- Cannot use %placeholder as code is imported */
   @extend .ons-container;
+  /* stylelint-enable scss/at-extend-no-missing-placeholder */
 }
 
 .col-wrap {

@@ -1,6 +1,8 @@
 button.ons-btn__btn {
   &--link {
+    /* stylelint-disable scss/at-extend-no-missing-placeholder -- Cannot use %placeholder as native browser styling is imported */
     @extend a;
+    /* stylelint-enable scss/at-extend-no-missing-placeholder */
 
     text-decoration: underline;
     font-weight: $font-weight-regular;
@@ -9,15 +11,17 @@ button.ons-btn__btn {
 
   &--link:active,
   &--link:focus {
+    /* stylelint-disable scss/at-extend-no-missing-placeholder -- Cannot use %placeholder as code is imported */
     @extend .ons-btn;
+    /* stylelint-enable scss/at-extend-no-missing-placeholder */
 
     top: 0;
   }
 
   &--search {
-          padding-bottom: 0;
-          text-decoration-thickness: 1px;
-          font-size: .77778rem;
-          margin-left: .75rem;
-      }
+    padding-bottom: 0;
+    text-decoration-thickness: 1px;
+    font-size: 0.77778rem;
+    margin-left: 0.75rem;
+  }
 }

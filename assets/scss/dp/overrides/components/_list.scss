@@ -4,11 +4,15 @@
   }
 
   &--truncated {
+    /* stylelint-disable scss/at-extend-no-missing-placeholder -- Cannot use %placeholder as code is imported */
     @extend .ons-list;
+    /* stylelint-enable scss/at-extend-no-missing-placeholder */
   }
 
   &__item--truncated {
+    /* stylelint-disable scss/at-extend-no-missing-placeholder -- Cannot use %placeholder as code is imported */
     @extend .ons-list__item;
+    /* stylelint-enable scss/at-extend-no-missing-placeholder */
 
     &:nth-child(3)::after,
     &:nth-child(6)::after {

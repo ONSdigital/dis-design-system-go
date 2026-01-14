@@ -471,7 +471,7 @@ once the transition to the ONS design system is complete. */
     }
 }
 
-.underline-link {
+.underline-link, %underline-link {
     text-decoration: underline !important;
 }
 
@@ -559,7 +559,9 @@ once the transition to the ONS design system is complete. */
 
         /* to offset above styling second p in an li should have extra margin on the top (giving it the same styling as an ordinary p) */
         p:nth-of-type(2) {
+            /* stylelint-disable scss/at-extend-no-missing-placeholder -- Cannot use %placeholder as native browser styling is imported */
             @extend p;
+            /* stylelint-enable scss/at-extend-no-missing-placeholder */
 
             margin-top: ($baseline * 2);
         }
@@ -574,7 +576,9 @@ once the transition to the ONS design system is complete. */
     .font-size {
         @for $i from 1 through 6 {
             &--h#{$i} {
+                /* stylelint-disable scss/at-extend-no-missing-placeholder -- Cannot use %placeholder as native browser styling is imported */
                 @extend h#{$i};
+                /* stylelint-enable scss/at-extend-no-missing-placeholder */
             }
         }
     }
@@ -608,7 +612,7 @@ once the transition to the ONS design system is complete. */
 
 /* Make all links within the component underlined */
 .link-adjust a:not(.btn) {
-    @extend .underline-link;
+    @extend %underline-link;
 
     &:focus {
         @include box-shadow(0 0 0 3px $carrot);
