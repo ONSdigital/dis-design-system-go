@@ -302,13 +302,13 @@ once the transition to the ONS design system is complete. */
 }
 
 /* javascript */
-.no-js .nojs--hide,
-.nojs--hide {
+.nojs--hide,
+.no-js .nojs--hide {
     display: none !important;
 }
 
-.js .js-hidden,
-.js-hidden {
+.js-hidden,
+.js .js-hidden {
     display: none !important;
 }
 

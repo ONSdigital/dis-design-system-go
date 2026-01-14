@@ -1,6 +1,10 @@
 /* _header.scss */
 
 /* PRIMARY NAVIGATION */
+.menu-is-expanded > a,
+.search-is-expanded > a {
+  background-color: $abbey;
+}
 
 .primary-nav {
   @media print {
@@ -55,8 +59,8 @@
     }
 
     /* children show on hover */
-    &:hover > ul,
-    &--focus > ul {
+    &--focus > ul,
+    &:hover > ul {
       top: 100%;
 
       @include breakpoint(md) {
@@ -75,25 +79,7 @@
         width: 100%;
       }
     }
-
-    /* set hover styling - done on link so it works on keyboard tab */
-    &:hover > a,
-    &:focus > a,
-    &--focus > a {
-      @include breakpoint(md) {
-        border-left: 1px solid $thunder;
-        background-color: $thunder;
-        color: $white;
-        text-decoration: none;
-      }
-    }
-
-    &:hover {
-      @include breakpoint(md) {
-        background-color: $thunder;
-      }
-    }
-
+    
     &--active {
       @include breakpoint(sm) {
         & > a {
@@ -107,6 +93,24 @@
 
       & > a {
         color: $white;
+      }
+    }
+
+    /* set hover styling - done on link so it works on keyboard tab */
+    &--focus > a,
+    &:hover > a,
+    &:focus > a {
+      @include breakpoint(md) {
+        border-left: 1px solid $thunder;
+        background-color: $thunder;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+
+    &:hover {
+      @include breakpoint(md) {
+        background-color: $thunder;
       }
     }
   }
@@ -359,18 +363,6 @@
         text-decoration: none;
       }
     }
-  }
-}
-
-.menu-is-expanded {
-  & > a {
-    background-color: $abbey;
-  }
-}
-
-.search-is-expanded {
-  & > a {
-    background-color: $abbey;
   }
 }
 
