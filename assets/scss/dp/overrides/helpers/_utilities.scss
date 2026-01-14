@@ -20,7 +20,7 @@ once the transition to the ONS design system is complete. */
     margin: -1px;
     border: 0;
     overflow: hidden;
-    clip: rect(0 0 0 0);
+    clip-path: rect(0 0 0 0);
     white-space: nowrap;
 
     /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
@@ -31,7 +31,7 @@ once the transition to the ONS design system is complete. */
         height: auto;
         margin: 0;
         overflow: visible;
-        clip: auto;
+        clip-path: auto;
     }
 }
 
