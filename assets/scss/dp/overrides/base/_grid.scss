@@ -1,41 +1,34 @@
-//_grid.scss
+/* _grid.scss */
 
-//--[vars]--
+/* --[vars]-- */
 
 $col: 16px;
 $gutter: 16px;
-
 $large-complex-grid-cols: 59;
 $medium-complex-grid-cols: 47;
-
 $large: $large-complex-grid-cols * $col;
 $medium: $medium-complex-grid-cols * $col;
 
-//simple cols
+/* simple cols */
 $large-cols-one: $large-complex-grid-cols * $col;
 $large-cols-half: calc(calc($large-complex-grid-cols - 1) / 2) * $col;
 $large-cols-one-third: calc(calc($large-complex-grid-cols - 2) / 3) * $col;
-$large-cols-two-thirds: (($large-complex-grid-cols - 1) * $col) -
-  $large-cols-one-third;
+$large-cols-two-thirds: (($large-complex-grid-cols - 1) * $col) - $large-cols-one-third;
 $large-cols-one-quarter: calc(calc($large-complex-grid-cols - 3) / 4) * $col;
-$large-cols-three-quarters: (($large-complex-grid-cols - 1) * $col) -
-  $large-cols-one-quarter;
-
+$large-cols-three-quarters: (($large-complex-grid-cols - 1) * $col) - $large-cols-one-quarter;
 $medium-cols-one: $medium-complex-grid-cols * $col;
 $medium-cols-half: calc(calc($medium-complex-grid-cols - 1) / 2) * $col;
 $medium-cols-one-third: calc(calc($medium-complex-grid-cols - 2) / 3) * $col;
-$medium-cols-two-thirds: (($medium-complex-grid-cols - 1) * $col)- $medium-cols-one-third;
+$medium-cols-two-thirds: (($medium-complex-grid-cols - 1) * $col) - $medium-cols-one-third;
 $medium-cols-one-quarter: calc(calc($medium-complex-grid-cols - 3) / 4) * $col;
-$medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) -
-  $medium-cols-one-quarter;
+$medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) - $medium-cols-one-quarter;
 
-//--[vars end]--
+/* --[vars end]-- */
 
-//--[mixins]--
+/* --[mixins]-- */
 
-// Breakpoint mixin in _breakpoints.scss
-
-// Generate the large columns
+/* Breakpoint mixin in _breakpoints.scss 
+Generate the large columns */
 @mixin make-lg-column($columns) {
   position: relative;
   min-height: 1px;
@@ -77,21 +70,25 @@ $medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) -
   }
 }
 
-//--[mixins end]--
+/* --[mixins end]-- */
 
-//--[classes]--
+/* --[classes]-- */
 .wrapper {
   @extend %clearfix;
+  /* stylelint-disable scss/at-extend-no-missing-placeholder -- Cannot use %placeholder as code is imported */
   @extend .ons-container;
+  /* stylelint-enable scss/at-extend-no-missing-placeholder */
 }
 
 .col-wrap {
   @extend %clearfix;
+
   width: 100%;
 }
 
 .col {
   @extend %clearfix;
+
   width: 100%;
   float: left;
 
@@ -103,43 +100,34 @@ $medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) -
       &-one {
         width: $medium-cols-one;
       }
-    }
-
-    &--md {
+  
       &-half {
         width: $medium-cols-half;
       }
-    }
-
-    &--md {
+   
       &-one-third {
         width: $medium-cols-one-third;
       }
-    }
-
-    &--md {
+  
       &-two-thirds {
         width: $medium-cols-two-thirds;
       }
-    }
-
-    &--md {
+  
       &-one-quarter {
         width: $medium-cols-one-quarter;
       }
+
       &-three-quarters {
         width: $medium-cols-three-quarters;
       }
-    }
-
-    &--md {
+ 
       &-full-width {
         width: 100%;
         margin: 0;
       }
     }
 
-    //call complex cols last so the css gets generated last and they take precedence
+    /* call complex cols last so the css gets generated last and they take precedence */
     @include medium-cols-complex;
     @include medium-cols-offset;
   }
@@ -152,45 +140,37 @@ $medium-cols-three-quarters: (($medium-complex-grid-cols - 1) * $col) -
       &-one {
         width: $large-cols-one;
       }
-    }
-
-    &--lg {
+    
       &-half {
         width: $large-cols-half;
       }
-    }
-
-    &--lg {
+  
       &-one-third {
         width: $large-cols-one-third;
       }
-    }
-    &--lg {
+
       &-two-thirds {
         width: $large-cols-two-thirds;
       }
-    }
-
-    &--lg {
+   
       &-one-quarter {
         width: $large-cols-one-quarter;
       }
+
       &-three-quarters {
         width: $large-cols-three-quarters;
       }
-    }
-
-    &--lg {
+   
       &-full-width {
         width: 100%;
         margin: 0;
       }
     }
 
-    //call complex cols last so the css gets generated last and they take precedence
+    /* call complex cols last so the css gets generated last and they take precedence */
     @include large-cols-complex;
     @include large-cols-offset;
   }
 }
 
-//--[classes end]--
+/* --[classes end]-- */

@@ -7,14 +7,13 @@
     }
 
     &__body {
-
         display: inline-block;
         padding-top: $baseline;
         margin-left: $col;
 
         @include breakpoint(sm) {
-            padding-top: 0px;
-            margin-left: 0px;
+            padding-top: 0;
+            margin-left: 0;
             display: block;
         }
     }

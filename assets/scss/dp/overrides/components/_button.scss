@@ -1,4 +1,6 @@
-//_buttons.scss
+@use 'sass:color';
+
+/* _buttons.scss */
 
 button {
     cursor: pointer;
@@ -9,10 +11,10 @@ button {
     display: inline-block;
     width: auto;
     cursor: pointer;
-    padding: 6px $col 10px $col;
+    padding: 6px $col 10px;
     border: 0 none;
     text-align: center;
-    -webkit-appearance: none;
+    appearance: none;
     transition: background-color 0.25s ease-out;
     text-decoration: none;
     line-height: $base-line-height;
@@ -23,12 +25,13 @@ button {
 
         &:hover,
         &:focus {
-            background-color: darken($primary, 8%);
+            background-color: color.adjust($primary, $lightness: -8%);
         }
     }
 
     &--primary-disabled {
         opacity: 0.7;
+
         &:hover,
         &:focus {
             background-color: $primary;
@@ -71,7 +74,7 @@ button {
 
         &:hover,
         &:focus {
-            background-color: darken($blumine, 8%);
+            background-color: color.adjust($blumine, $lightness: -8%);
         }
     }
 
@@ -100,16 +103,18 @@ button {
             cursor: default;
         }
     }
+
     &--focus {
       &:focus {
           box-shadow: 0 0 0 3px $carrot;
           outline: 0;
       }
     }
+
     &--link {
         background: transparent;
         color: $matisse;
-        padding: 6px 0 2px 0;
+        padding: 6px 0 2px;
 
         &:hover {
             text-decoration: underline;
@@ -125,6 +130,7 @@ button {
             color: $ship-grey;
             cursor: text;
             text-decoration: none!important;
+
             &:hover, &:focus {
                 text-decoration: none;
                 outline: 0;
@@ -145,7 +151,7 @@ button {
     &--thin {
         padding-top: 0;
         padding-bottom: 0;
-        height: 24px; //fix for button tags
+        height: 24px; /* fix for button tags */
     }
 
     &--thick {
@@ -164,7 +170,6 @@ button {
     }
 
     &--full-width {
-
         display: block;
         width: 100%;
     }
@@ -174,8 +179,6 @@ button {
         max-width: ($col * 6);
         padding: 0;
         font-size: 12px;
-        //position: relative;
-        //overflow: hidden;
 
         &--all {
             max-width: ($col * 5);
@@ -192,7 +195,7 @@ button {
     }
 
     &--simple {
-        padding: 10px 0 6px 0;
+        padding: 10px 0 6px;
         color: $matisse;
         background-color: transparent;
         text-align: left;
@@ -221,13 +224,12 @@ button {
     }
 
     legend {
-        padding: 6px 0 10px 0;
+        padding: 6px 0 10px;
     }
 
     input {
-        //display: none; //breaks keyboard tabbing/focus
-        height: 0px;
-        width: 0px;
+        height: 0;
+        width: 0;
         position: absolute;
         left: -100px;
     }

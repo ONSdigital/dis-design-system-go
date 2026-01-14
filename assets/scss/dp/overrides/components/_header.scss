@@ -1,6 +1,10 @@
-// _header.scss
+/* _header.scss */
 
-// PRIMARY NAVIGATION
+/* PRIMARY NAVIGATION */
+.menu-is-expanded > a,
+.search-is-expanded > a {
+  background-color: $abbey;
+}
 
 .primary-nav {
   @media print {
@@ -30,7 +34,7 @@
     }
 
     @include breakpoint(sm) {
-      padding: 0 0 $baseline 0;
+      padding: 0 0 $baseline;
       display: block;
     }
   }
@@ -54,10 +58,11 @@
       }
     }
 
-    //children show on hover
-    &:hover > ul,
-    &--focus > ul {
+    /* children show on hover */
+    &--focus > ul,
+    &:hover > ul {
       top: 100%;
+
       @include breakpoint(md) {
         background-color: $thunder;
         color: $white;
@@ -74,24 +79,7 @@
         width: 100%;
       }
     }
-
-    //set hover styling - done on link so it works on keyboard tab
-    &:hover > a,
-    &:focus > a,
-    &--focus > a {
-      @include breakpoint(md) {
-        border-left: 1px solid $thunder;
-        background-color: $thunder;
-        color: $white;
-        text-decoration: none;
-      }
-    }
-    &:hover {
-      @include breakpoint(md) {
-        background-color: $thunder;
-      }
-    }
-
+    
     &--active {
       @include breakpoint(sm) {
         & > a {
@@ -105,6 +93,24 @@
 
       & > a {
         color: $white;
+      }
+    }
+
+    /* set hover styling - done on link so it works on keyboard tab */
+    &--focus > a,
+    &:hover > a,
+    &:focus > a {
+      @include breakpoint(md) {
+        border-left: 1px solid $thunder;
+        background-color: $thunder;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+
+    &:hover {
+      @include breakpoint(md) {
+        background-color: $thunder;
       }
     }
   }
@@ -123,14 +129,14 @@
       display: inline-block;
       padding: 5px $baseline * 2 9px $baseline * 2;
       border-left: 1px solid $thunder;
-      font-size: 13px; // smaller font on medium for retina screens
+      font-size: 13px; /* smaller font on medium for retina screens */
     }
 
     @include breakpoint(lg) {
       font-size: 14px;
     }
 
-    //set focus styling - has to be on link to work (hover styling on li)
+    /* set focus styling - has to be on link to work (hover styling on li) */
     &:focus {
       @include breakpoint(md) {
         border-left: 1px solid $thunder;
@@ -147,7 +153,7 @@
       }
     }
 
-    //show sub-menu on keyboard focus of link
+    /* show sub-menu on keyboard focus of link */
     &:focus + ul {
       top: 100%;
 
@@ -159,12 +165,11 @@
     }
 
     &:focus.hide-children + ul {
-      left: -99999px; // override class to hide menu even when expandable item has focus
+      left: -99999px; /* override class to hide menu even when expandable item has focus */
     }
   }
 
-  //NAVIGATION CHILDREN
-
+  /* NAVIGATION CHILDREN */
   &__child-list {
     list-style: none;
     color: $white;
@@ -184,17 +189,21 @@
     }
   }
 
-  &__child-item {
+  &__child-item,
+  %primary-nav-child-item {
     display: block;
     margin: 0;
     padding: 0;
 
+    /* stylelint-disable scss/percent-placeholder-pattern -- Selector is not a placeholder; false positive. */
     &--active {
+      /* stylelint-enable scss/percent-placeholder-pattern */
       background-color: $cod-gray;
     }
   }
 
-  &__child-link {
+  &__child-link,
+  %primary-nav-child-link {
     display: block;
     color: $white;
     text-decoration: none;
@@ -238,7 +247,7 @@
   }
 }
 
-//JQUERY EXPANDABLE MOBILE MENU - temporary until we write our own JS in new library
+/* JQUERY EXPANDABLE MOBILE MENU - temporary until we write our own JS in new library */
 
 .js-nav-hidden {
   @include breakpoint(sm) {
@@ -259,10 +268,10 @@
 }
 
 .nav__top-level-duplicate {
-  @extend .primary-nav__child-item;
+  @extend %primary-nav-child-item;
 
   & > a {
-    @extend .primary-nav__child-link;
+    @extend %primary-nav-child-link;
   }
 
   @include breakpoint(md) {
@@ -270,14 +279,14 @@
   }
 }
 
-//Add plus symbol - class used for JS too
+/* Add plus symbol - class used for JS too */
 .js-expandable {
   @include breakpoint(sm) {
     & > a > .expansion-indicator {
       display: initial;
       visibility: initial;
 
-      &:before {
+      &::before {
         position: absolute;
         color: $iron-light;
         content: "+";
@@ -287,7 +296,7 @@
 
     &-active {
       & > a > .expansion-indicator {
-        &:before {
+        &::before {
           content: "-";
           padding-left: 5px;
         }
@@ -296,7 +305,7 @@
   }
 }
 
-//Menu and search controls - TODO rewrite with mobile
+/* Menu and search controls - TODO rewrite with mobile */
 .nav--controls {
   list-style: none;
   margin: 0;
@@ -357,18 +366,6 @@
   }
 }
 
-.menu-is-expanded {
-  & > a {
-    background-color: $abbey;
-  }
-}
-
-.search-is-expanded {
-  & > a {
-    background-color: $abbey;
-  }
-}
-
 .nav-main--hidden {
   @include breakpoint(sm) {
     display: none;
@@ -381,12 +378,12 @@
   }
 }
 
-// HEADER - LOGO, LANGUAGE SELECTION AND SECONDARY NAV LINKS
+/* HEADER - LOGO, LANGUAGE SELECTION AND SECONDARY NAV LINKS */
 
-// Header
+/* Header */
 .header {
-  padding: 15px 0 9px 0;
-  position: relative; // So language toggle has relative parent
+  padding: 15px 0 9px;
+  position: relative; /* So language toggle has relative parent */
   height: ($baseline * 9);
 
   &--separator {
@@ -401,13 +398,13 @@
   }
 }
 
-// Logo
+/* Logo */
 .logo {
   display: block;
 
   @include breakpoint(sm) {
     height: $baseline * 6;
-    padding: 2px 0 6px 0; //off-grid on mobile otherwise
+    padding: 2px 0 6px; /* off-grid on mobile otherwise */
   }
 
   @include breakpoint(md) {
@@ -416,7 +413,7 @@
   }
 }
 
-// Secondary navigation list
+/* Secondary navigation list */
 .secondary-nav {
   @include breakpoint(md-max) {
     margin: 0;
@@ -425,7 +422,7 @@
   max-width: 55%;
   float: right;
 
-  // Fix for old-ie hiding mobile--hide class
+  /* Fix for old-ie hiding mobile--hide class */
   @include breakpoint(sm) {
     display: none;
   }
@@ -452,7 +449,7 @@
   }
 
   &__link {
-    padding: 0 8px 0 8px;
+    padding: 0 8px;
     border-right: 1px solid $iron-light;
     text-decoration: none;
 
@@ -468,7 +465,7 @@
   }
 }
 
-// 'Skip to main content' keyboard tabbable link
+/* 'Skip to main content' keyboard tabbable link */
 .skiplink {
   position: absolute;
   left: -99999px;
@@ -482,7 +479,7 @@
     margin: 0 auto;
     z-index: 10;
     width: ($col * 10);
-    padding: 6px 0 10px 0;
+    padding: 6px 0 10px;
     font-size: 14px;
     text-align: center;
   }

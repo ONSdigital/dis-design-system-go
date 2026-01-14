@@ -16,7 +16,7 @@
         min-width: 59px;
       }
 
-      @media (max-width: 739px) {
+      @media (width <= 739px) {
         &__logo {
           height: 41px;
           width: 41px;
