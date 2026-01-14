@@ -127,7 +127,7 @@
 
     &__item-title.ons-u-pr-m,
     &__values.ons-u-pr-m {
-      padding-right: 1.333333rem;
+      padding-right: 1.3333rem;
     }
 
     @include mq(xxs, s) {
@@ -139,7 +139,7 @@
 
   &-back-to {
     &__link {
-      padding: 0.5rem 0.666667rem;
+      padding: 0.5rem 0.6667rem;
       display: inline-flex;
       border: 1px solid $color-grey-75;
     }
