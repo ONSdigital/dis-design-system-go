@@ -100,27 +100,19 @@ Generate the large columns */
       &-one {
         width: $medium-cols-one;
       }
-    }
-
-    &--md {
+  
       &-half {
         width: $medium-cols-half;
       }
-    }
-
-    &--md {
+   
       &-one-third {
         width: $medium-cols-one-third;
       }
-    }
-
-    &--md {
+  
       &-two-thirds {
         width: $medium-cols-two-thirds;
       }
-    }
-
-    &--md {
+  
       &-one-quarter {
         width: $medium-cols-one-quarter;
       }
@@ -128,9 +120,7 @@ Generate the large columns */
       &-three-quarters {
         width: $medium-cols-three-quarters;
       }
-    }
-
-    &--md {
+ 
       &-full-width {
         width: 100%;
         margin: 0;
@@ -150,27 +140,19 @@ Generate the large columns */
       &-one {
         width: $large-cols-one;
       }
-    }
-
-    &--lg {
+    
       &-half {
         width: $large-cols-half;
       }
-    }
-
-    &--lg {
+  
       &-one-third {
         width: $large-cols-one-third;
       }
-    }
 
-    &--lg {
       &-two-thirds {
         width: $large-cols-two-thirds;
       }
-    }
-
-    &--lg {
+   
       &-one-quarter {
         width: $large-cols-one-quarter;
       }
@@ -178,9 +160,7 @@ Generate the large columns */
       &-three-quarters {
         width: $large-cols-three-quarters;
       }
-    }
-
-    &--lg {
+   
       &-full-width {
         width: 100%;
         margin: 0;
