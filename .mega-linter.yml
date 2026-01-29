@@ -14,5 +14,4 @@ HTML_DJLINT_FILE_EXTENSIONS: [".tmpl"]
 
 CSS_STYLELINT_PRE_COMMANDS: 
   - command: npm install stylelint-selector-bem-pattern
-  - command: npm install stylelint-config-standard-scss
-
+  - command: npm install stylelint-config-standard-scss@14
