@@ -19,3 +19,5 @@ RUN go clean -modcache
 # Map between the working directories of dev and live
 RUN ln -s /go /dis-design-system-go
 WORKDIR /dis-design-system-go
+
+CMD [ "make", "debug" ]
