@@ -22,7 +22,7 @@ func dateWithFormat(s, format string) string {
 	return template.HTMLEscapeString(t.Format(format))
 }
 
-// Deprecated: use newVersionDateFormat or DateTimeOnsDatePatternFormat instead
+// Deprecated: use ONSDateFormat or DateTimeOnsDatePatternFormat instead
 func DateFormat(s string) string {
 	return dateWithFormat(s, "02 January 2006")
 }
@@ -41,7 +41,7 @@ func TimeFormat12h(s string) string {
 	return dateWithFormat(s, "03:04pm")
 }
 
-// Deprecated: use newVersionDateTimeFormat or DateTimeOnsDatePatternFormat instead
+// Deprecated: use ONSDateTimeFormat or DateTimeOnsDatePatternFormat instead
 func DateTimeFormat(s string) string {
 	return dateWithFormat(s, "02 January 2006 15:04")
 }
