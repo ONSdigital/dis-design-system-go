@@ -18,6 +18,16 @@ func TestDateFormat(t *testing.T) {
 	})
 }
 
+func TestONSDateFormat(t *testing.T) {
+	Convey("ONS date format returns human readable string without leading zero", t, func() {
+		So(helper.ONSDateFormat("2019-08-03T00:00:00.000Z"), ShouldEqual, "3 August 2019")
+		So(helper.ONSDateFormat("2019-05-21T23:00:00.000Z"), ShouldEqual, "22 May 2019") // BST
+		So(helper.ONSDateFormat("2019-12-21T23:00:00.000Z"), ShouldEqual, "21 December 2019")
+		So(helper.ONSDateFormat("2019-08-15"), ShouldEqual, "2019-08-15")
+		So(helper.ONSDateFormat(""), ShouldEqual, "")
+	})
+}
+
 func TestTimeFormat24h(t *testing.T) {
 	Convey("Time format returns time in 24h when passed date-time", t, func() {
 		So(helper.TimeFormat24h("2019-05-21T23:00:00.000Z"), ShouldEqual, "00:00") // BST
@@ -141,6 +151,26 @@ func TestDateTimeFormat(t *testing.T) {
 	Convey("Given a invalid datetime return said datetime", t, func() {
 		want := "2006-01-02Tkjklj+07:00"
 		got := helper.DateTimeFormat("2006-01-02Tkjklj+07:00")
+		So(got, ShouldEqual, want)
+	})
+}
+
+func TestONSDateTimeFormat(t *testing.T) {
+	Convey("Given a formatted datetime return a human readable ONS datetime", t, func() {
+		Convey("When in British Summer Time", func() {
+			want := "4 June 2017 09:30"
+			got := helper.ONSDateTimeFormat("2017-06-04T08:30:00.000Z")
+			So(got, ShouldEqual, want)
+		})
+		Convey("When not in British Summer Time (GMT)", func() {
+			want := "3 February 2019 19:21"
+			got := helper.ONSDateTimeFormat("2019-02-03T19:21:22.134Z")
+			So(got, ShouldEqual, want)
+		})
+	})
+	Convey("Given a invalid datetime return said datetime", t, func() {
+		want := "2010-04-03Tinvalid+01:00"
+		got := helper.ONSDateTimeFormat("2010-04-03Tinvalid+01:00")
 		So(got, ShouldEqual, want)
 	})
 }

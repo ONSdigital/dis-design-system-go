@@ -22,8 +22,13 @@ func dateWithFormat(s, format string) string {
 	return template.HTMLEscapeString(t.Format(format))
 }
 
+// Deprecated: use ONSDateFormat or DateTimeOnsDatePatternFormat instead
 func DateFormat(s string) string {
 	return dateWithFormat(s, "02 January 2006")
+}
+
+func ONSDateFormat(s string) string {
+	return dateWithFormat(s, "2 January 2006")
 }
 
 // TimeFormat24h extracts time value for 24hr clock from ISO8601 formatted timestamps
@@ -36,8 +41,13 @@ func TimeFormat12h(s string) string {
 	return dateWithFormat(s, "03:04pm")
 }
 
+// Deprecated: use ONSDateTimeFormat or DateTimeOnsDatePatternFormat instead
 func DateTimeFormat(s string) string {
 	return dateWithFormat(s, "02 January 2006 15:04")
+}
+
+func ONSDateTimeFormat(s string) string {
+	return dateWithFormat(s, "2 January 2006 15:04")
 }
 
 func DateFormatYYYYMMDD(s string) string {
