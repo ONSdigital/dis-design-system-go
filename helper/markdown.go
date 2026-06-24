@@ -18,7 +18,7 @@ func Markdown(md string) template.HTML {
 
 	modifiedMarkdown := strings.Builder{}
 	for _, line := range strings.Split(md, "\n") {
-		modifiedMarkdown.WriteString(fmt.Sprintf("%s\n", re.ReplaceAllString(line, "$1 $2")))
+		fmt.Fprintf(&modifiedMarkdown, "%s\n", re.ReplaceAllString(line, "$1 $2"))
 	}
 
 	s := blackfriday.Run([]byte(modifiedMarkdown.String()))
