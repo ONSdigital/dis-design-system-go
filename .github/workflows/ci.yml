@@ -30,6 +30,8 @@ jobs:
         run: make audit-go
   
   audit-node:
+    # Dependabot PRs cannot access secrets so the node audit check will be skipped for those PRs.
+    if: ${{ github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
