@@ -27,7 +27,7 @@ func DateFormat(s string) string {
 	return dateWithFormat(s, "02 January 2006")
 }
 
-func NewVersionDateFormat(s string) string {
+func ONSDateFormat(s string) string {
 	return dateWithFormat(s, "2 January 2006")
 }
 
@@ -46,7 +46,7 @@ func DateTimeFormat(s string) string {
 	return dateWithFormat(s, "02 January 2006 15:04")
 }
 
-func NewVersionDateTimeFormat(s string) string {
+func ONSDateTimeFormat(s string) string {
 	return dateWithFormat(s, "2 January 2006 15:04")
 }
 
