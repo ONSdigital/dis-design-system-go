@@ -158,8 +158,8 @@ func TestDateTimeFormat(t *testing.T) {
 func TestONSDateTimeFormat(t *testing.T) {
 	Convey("Given a formatted datetime return a human readable ONS datetime", t, func() {
 		Convey("When in British Summer Time", func() {
-			want := "13 June 2017 09:30"
-			got := helper.ONSDateTimeFormat("2017-06-13T08:30:00.000Z")
+			want := "4 June 2017 09:30"
+			got := helper.ONSDateTimeFormat("2017-06-04T08:30:00.000Z")
 			So(got, ShouldEqual, want)
 		})
 		Convey("When not in British Summer Time (GMT)", func() {
@@ -169,8 +169,8 @@ func TestONSDateTimeFormat(t *testing.T) {
 		})
 	})
 	Convey("Given a invalid datetime return said datetime", t, func() {
-		want := "2006-01-02Tkjklj+07:00"
-		got := helper.ONSDateTimeFormat("2006-01-02Tkjklj+07:00")
+		want := "2010-04-03Tinvalid+01:00"
+		got := helper.ONSDateTimeFormat("2010-04-03Tinvalid+01:00")
 		So(got, ShouldEqual, want)
 	})
 }
