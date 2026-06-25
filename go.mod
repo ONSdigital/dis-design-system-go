@@ -37,3 +37,5 @@ require (
 	go.opentelemetry.io/otel/trace v1.38.0 // indirect
 	golang.org/x/sys v0.36.0 // indirect
 )
+
+retract v2.1.4 // reason: tagged after build commit, use v2.1.5 instead
