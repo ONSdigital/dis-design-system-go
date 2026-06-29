@@ -9,7 +9,7 @@
     "build": "npm run clean && NODE_ENV=production gulp build",
     "test": "echo no tests add yet, skipping...",
     "watch": "gulp watch",
-    "start": "serve -l ${PORT:-9002}",
+    "start": "serve -l ${PORT:-9002} --cors",
     "dev": "run-p clean watch start",
     "clean": "rimraf ./dist",
     "lint": "eslint",
