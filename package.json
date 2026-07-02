@@ -83,7 +83,6 @@
     "braces": "^3.0.3",
     "micromatch": "^4.0.8",
     "picomatch": "^4.0.4",
-    "fast-uri": "3.1.3",
-    "brace-expansion": "5.0.7"
+    "fast-uri": "3.1.3"
   }
 }
