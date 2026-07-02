@@ -82,6 +82,7 @@
     "es5-ext": "^0.10.63",
     "braces": "^3.0.3",
     "micromatch": "^4.0.8",
-    "picomatch": "^4.0.4"
+    "picomatch": "^4.0.4",
+    "fast-uri": "3.1.3"
   }
 }
