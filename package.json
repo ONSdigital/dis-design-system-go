@@ -36,7 +36,7 @@
   "dependencies": {
     "@ons/design-system": "^57.0.1",
     "abortcontroller-polyfill": "^1.7.5",
-    "core-js": "^3.32.1",
+    "core-js": "^3.49.0",
     "glob-parent": "^6.0.2",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -57,7 +57,7 @@
     "@babel/preset-env": "^7.15.8",
     "@babel/traverse": "^7.23.2",
     "auditjs": "^4.0.37",
-    "autoprefixer": "^10.2.4",
+    "autoprefixer": "^10.5.2",
     "babelify": "^10.0.0",
     "browserify": "^17.0.1",
     "eslint": "^9.39.4",
