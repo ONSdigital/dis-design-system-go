@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
           gtmDataLayerPush({
             event: 'fileDownload',
             fileExtension: format,
-            fileName: fileName,
-            linkText: "Download",
+            fileName,
+            linkText: 'Download',
             linkURL: pagePath,
-            linkDomain: "ons.gov.uk",
+            linkDomain: 'ons.gov.uk',
           });
         }
       });
