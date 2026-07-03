@@ -12,10 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
       getDataForm.addEventListener('submit', (e) => {
         const formData = new FormData(e.target);
         const format = formData.get('format');
+        const fileURL = formData.get(`fileURL-${format}`);
+        const fileName = fileURL.split('/').pop();
+        const pagePath = window.location.pathname;
         if (format != null) {
           gtmDataLayerPush({
             event: 'fileDownload',
             fileExtension: format,
+            fileName: fileName,
+            linkText: "Download",
+            linkURL: pagePath,
+            linkDomain: "ons.gov.uk",
           });
         }
       });
