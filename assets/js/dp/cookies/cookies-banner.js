@@ -73,6 +73,9 @@ function submitCookieBannerForm(e) {
     case 'accept':
       setCookiePolicy(acceptAllCookiesPolicy);
       cookiesAcceptedText.classList.remove('hidden');
+      if (typeof loadGTM != 'undefined') {
+            loadGTM();
+        }
       break;
     case 'reject':
       setCookiePolicy(defaultCookiesPolicy);
