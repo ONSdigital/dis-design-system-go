@@ -1,12 +1,16 @@
 {
   "ignore": [
-    { 
-      "id": "CVE-2025-8129", 
-      "reason": "A vulnerability of 'koa' a sub-dependency of 'local-web-server' which is only used in dev, not in compiled assets" 
+    {
+      "id": "CVE-2026-3449",
+      "reason": "A vulnerability of once which is a sub dependency of many older dependencies"
     },
-    { 
-      "id": "CVE-2025-7339", 
-      "reason": "A vulnerability of 'on-headers' a sub-dependency of 'local-web-server' which is only used in dev, not in compiled assets" 
+    {
+      "id": "CVE-2026-27904",
+      "reason": "A vulnerability of minimatch but is actually resolved in 3.1.5 which is the version we are using, so this is a false positive"
+    },
+    {
+      "id": "CVE-2026-13149",
+      "reason": "A vulnerability of brace expansion which is a sub dependency of lint packages which we are not looking to change. CVE has been noted on project issue and have a backlog ticket created to address this at a later date."
     }
   ]
 }
