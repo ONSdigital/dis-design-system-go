@@ -73,13 +73,36 @@
           f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MBCBVQS');
       }
-      function isUsageCookieAllowed(){
-          var re = /^(.*)?\s*'usage':true\s*[^;]+(.*)?$/;
-          return document.cookie.match(re);
+
+      // extractValue extracts the value from an undecodeable json cookie string
+      function extractValue(key, extractionString) {
+        const extractionRegex = new RegExp(`'${key}':(.*?)[,}]`)
+        const match = extractionString.match(extractionRegex)
+        if (match) {
+            return match[1]
+        }
+        
+        return null
+      }
+
+      // isUsageCookieAllowed reads the ons_cookie_policy to determine the user's usage preference. 
+      // When no policy is found, the user is opted out by default.
+      function isUsageCookieAllowed() {
+        var policyCookie = document.cookie.match('(?:^|; )ons_cookie_policy=({.*?})');
+        if (policyCookie) {
+            console.debug('ons_cookie_policy found');
+
+            var usageValue = extractValue("usage", policyCookie[1]);
+            console.debug('usage is', usageValue);
+
+            return (usageValue == "true") ? true : false;
+        }
+        console.debug('no cookie found - opting out');
+        return false;
       }
 
       if (isUsageCookieAllowed()) {
-          loadGTM();
+        loadGTM();
       }
       console.log(isUsageCookieAllowed());
     </script>
