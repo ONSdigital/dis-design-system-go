@@ -73,7 +73,9 @@ function submitCookieBannerForm(e) {
     case 'accept':
       setCookiePolicy(acceptAllCookiesPolicy);
       cookiesAcceptedText.classList.remove('hidden');
-      if (typeof loadGTM != 'undefined') {
+      if (typeof loadGTM !== 'undefined') {
+        // loadGTM() is defined in assets/templates/partials/gtm-data-layer.tmpl
+        // eslint-disable-next-line no-undef
         loadGTM();
       }
       break;
