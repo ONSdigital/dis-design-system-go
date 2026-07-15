@@ -42,7 +42,7 @@ build: build-go build-node ## Builds the Go binary and the frontend assets
 
 .PHONY: build-go
 build-go: 
-	go build -tags 'production' $(LDFLAGS) -o $(BINPATH)/dp-renderer
+	go build -tags 'production' $(LDFLAGS) -o $(BINPATH)/dis-design-system-go
 
 .PHONY: build-node
 build-node: prepare-node
