@@ -24,7 +24,7 @@ all: delimiter-AUDIT audit delimiter-UNIT-TESTS test delimiter-LINTERS lint deli
 
 .PHONY: prepare-node
 prepare-node: ## Install node modules
-	$(NPM) install --unsafe-perm
+	$(NPM) install
 
 .PHONY: audit
 audit: audit-go audit-node
