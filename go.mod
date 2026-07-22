@@ -15,7 +15,7 @@ require (
 	github.com/russross/blackfriday/v2 v2.1.0
 	github.com/smartystreets/goconvey v1.8.1
 	github.com/unrolled/render v1.7.0
-	golang.org/x/text v0.29.0
+	golang.org/x/text v0.39.0
 )
 
 require (
