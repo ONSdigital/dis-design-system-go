@@ -52,19 +52,34 @@ function createBuildScriptTask({ entryPoint, outputFile, config }) {
   return taskName;
 }
 
-gulp.task('copy-static-assets-from-design-system', () => {
-  gulp
-    .src(`${DESIGN_SYSTEM_MODULE_PATH}/fonts/**`)
-    .pipe(gulp.dest(`${OUTPUT_DIRECTORY}/fonts`));
+function createCopyStaticAssetsTask({ sourcePath, destinationPath }) {
+  const taskName = `copy-static-assets:${destinationPath}`;
+  gulp.task(taskName, (done) => {
+    gulp
+      .src(sourcePath)
+      .pipe(gulp.dest(`${OUTPUT_DIRECTORY}/${destinationPath}`));
+    done();
+  });
+  return taskName;
+}
 
-  gulp
-    .src(`${DESIGN_SYSTEM_MODULE_PATH}/img/**`)
-    .pipe(gulp.dest(`${OUTPUT_DIRECTORY}/img`));
-
-  return gulp
-    .src(`${DESIGN_SYSTEM_MODULE_PATH}/favicons/**`)
-    .pipe(gulp.dest(`${OUTPUT_DIRECTORY}/favicons`));
-});
+gulp.task(
+  'copy-static-assets-from-design-system',
+  gulp.parallel(
+    createCopyStaticAssetsTask({
+      sourcePath: `${DESIGN_SYSTEM_MODULE_PATH}/fonts/**`,
+      destinationPath: 'fonts',
+    }),
+    createCopyStaticAssetsTask({
+      sourcePath: `${DESIGN_SYSTEM_MODULE_PATH}/img/**`,
+      destinationPath: 'img',
+    }),
+    createCopyStaticAssetsTask({
+      sourcePath: `${DESIGN_SYSTEM_MODULE_PATH}/favicons/**`,
+      destinationPath: 'favicons',
+    }),
+  ),
+);
 
 gulp.task('build-styles', () => gulp
   .src('./assets/scss/*.scss')
