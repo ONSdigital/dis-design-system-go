@@ -6,7 +6,11 @@
     },
     {
       "id": "CVE-2026-13149",
-      "reason": "A vulnarability of brace expansion which is a sub depencecy of lint packages which we are not looking to change. CVE has been noted on project issue and have a backlog ticket created to address this at a later date."
+      "reason": "A vulnerability of brace expansion which is a sub dependency of lint packages which we are not looking to change. CVE has been noted on project issue and have a backlog ticket created to address this at a later date."
+    },
+    {
+      "id": "CVE-2026-14257",
+      "reason": "A vulnerability of brace expansion which is a sub dependency of lint packages which we are not looking to change. CVE has been noted on project issue and have a backlog ticket created to address this at a later date."
     }
   ]
 }
