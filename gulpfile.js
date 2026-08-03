@@ -73,7 +73,7 @@ gulp.task('build-styles', () => gulp
 
 gulp.task('build-script', gulp.series(...scripts.map(createBuildScriptTask)));
 
-gulp.task('watch-and-build', async () => {
+gulp.task('watch-and-build', () => {
   gulp.watch('./assets/js/**', gulp.series('build-script'));
   gulp.watch('./assets/scss/**/*.scss', gulp.series('build-styles'));
 });
