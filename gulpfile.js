@@ -56,7 +56,7 @@ function createCopyStaticAssetsTask({ sourcePath, destinationPath }) {
   const taskName = `copy-static-assets:${destinationPath}`;
   gulp.task(taskName, (done) => {
     gulp
-      .src(sourcePath)
+      .src(sourcePath, { encoding: false })
       .pipe(gulp.dest(`${OUTPUT_DIRECTORY}/${destinationPath}`));
     done();
   });
