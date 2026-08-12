@@ -38,7 +38,7 @@ jobs:
         # cupcake flavor covers all linters used in this project (GO_GOLANGCI_LINT,
         # JAVASCRIPT_ES, HTML_DJLINT, CSS_STYLELINT) with a smaller image than the default
         # More info at https://megalinter.io/flavors/
-        uses: oxsecurity/megalinter/flavors/cupcake@v9
+        uses: oxsecurity/megalinter/flavors/cupcake@v10
         env:
           # All available variables are described in documentation
           # https://megalinter.io/configuration/
