@@ -1,11 +1,6 @@
 // Utilities inherited from Sixteens design system, destined for removal
 // once the transition to the ONS design system is complete.
 
-/* This class has been added to test to see whether altering the eventual css will allow for the headers which are set by the ci/cd pipeline to reset. */
-.test {
-    margin: auto;
-}
-
 $old-ie: false;
 
 //hiding
