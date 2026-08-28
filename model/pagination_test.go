@@ -9,6 +9,8 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
+const currentURL = "current"
+
 func mockPaginationLocales(name string) ([]byte, error) {
 	locale := []string{
 		"[Pagination]",
@@ -96,7 +98,7 @@ func TestPagination(t *testing.T) {
 			pagination := model.Pagination{
 				PagesToDisplay: []model.PageToDisplay{
 					{PageNumber: 1, URL: "previous"},
-					{PageNumber: 2, URL: "current"},
+					{PageNumber: 2, URL: currentURL},
 				},
 				CurrentPage: 2,
 			}
@@ -106,7 +108,7 @@ func TestPagination(t *testing.T) {
 		Convey("Should return an empty fragment when the previous page lies outside the display window", func() {
 			pagination := model.Pagination{
 				PagesToDisplay: []model.PageToDisplay{
-					{PageNumber: 1, URL: "current"},
+					{PageNumber: 1, URL: currentURL},
 					{PageNumber: 2, URL: "2"},
 				},
 				CurrentPage: 1,
@@ -119,7 +121,7 @@ func TestPagination(t *testing.T) {
 		Convey("Should pick the URL of the next page", func() {
 			pagination := model.Pagination{
 				PagesToDisplay: []model.PageToDisplay{
-					{PageNumber: 1, URL: "current"},
+					{PageNumber: 1, URL: currentURL},
 					{PageNumber: 2, URL: "next"},
 				},
 				CurrentPage: 1,
@@ -131,7 +133,7 @@ func TestPagination(t *testing.T) {
 			pagination := model.Pagination{
 				PagesToDisplay: []model.PageToDisplay{
 					{PageNumber: 1, URL: "1"},
-					{PageNumber: 2, URL: "current"},
+					{PageNumber: 2, URL: currentURL},
 				},
 				CurrentPage: 2,
 			}

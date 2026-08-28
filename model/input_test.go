@@ -17,23 +17,23 @@ func TestFuncGetInputType(t *testing.T) {
 					{
 						// text returned to ensure backwards compatibility
 						given:    0,
-						expected: "text",
+						expected: inputTypeText,
 					},
 					{
 						given:    int(Text),
-						expected: "text",
+						expected: inputTypeText,
 					},
 					{
 						given:    int(Email),
-						expected: "email",
+						expected: SocialEmailStr,
 					},
 					{
 						given:    int(Tel),
-						expected: "tel",
+						expected: inputTypeTel,
 					},
 					{
 						given:    int(Url),
-						expected: "url",
+						expected: inputTypeURL,
 					},
 					{
 						given:    25,

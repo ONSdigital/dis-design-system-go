@@ -11,6 +11,12 @@ const (
 	Url
 )
 
+const (
+	inputTypeText = "text"
+	inputTypeTel  = "tel"
+	inputTypeURL  = "url"
+)
+
 /*
 Input represents the common attributes and elements for html input.
 Some properties are not rendered if they are invalid attributes for the type.
@@ -34,13 +40,13 @@ type Input struct {
 func (i Input) FuncGetInputType() (inputType string) {
 	switch i.Type {
 	case Text:
-		return "text"
+		return inputTypeText
 	case Email:
-		return "email"
+		return SocialEmailStr
 	case Tel:
-		return "tel"
+		return inputTypeTel
 	case Url:
-		return "url"
+		return inputTypeURL
 	}
 	return inputType
 }

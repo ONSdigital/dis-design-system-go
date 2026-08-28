@@ -1,5 +1,7 @@
 package model
 
+const autocompleteNameStr = "name"
+
 type Feedback struct {
 	Description TextareaField `json:"description"`
 	NameInput   TextField     `json:"name_input"`
@@ -33,20 +35,20 @@ func (p Page) FuncFeedback() Feedback {
 		},
 		NameInput: TextField{
 			Input: Input{
-				Autocomplete: "name",
+				Autocomplete: autocompleteNameStr,
 				ID:           "name-field",
 				Label: Localisation{
 					LocaleKey: "NameOpt",
 					Plural:    1,
 				},
-				Name:     "name",
+				Name:     autocompleteNameStr,
 				Type:     Text,
 				Language: p.Language,
 			},
 		},
 		EmailInput: TextField{
 			Input: Input{
-				Autocomplete: "email",
+				Autocomplete: SocialEmailStr,
 				DataAttributes: []DataAttribute{
 					{
 						Key: "type-mismatch",
@@ -61,7 +63,7 @@ func (p Page) FuncFeedback() Feedback {
 					LocaleKey: "EmailOpt",
 					Plural:    1,
 				},
-				Name:     "email",
+				Name:     SocialEmailStr,
 				Type:     Email,
 				Language: p.Language,
 			},
