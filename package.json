@@ -77,13 +77,14 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "overrides": {
+    "browserslist": "^4.28.8",
     "glob-parent": "^6.0.2",
     "semver": "7.5.2",
     "es5-ext": "^0.10.63",
     "braces": "^3.0.3",
     "micromatch": "^4.0.8",
     "picomatch": "^4.0.4",
-    "fast-uri": "3.1.5",
+    "fast-uri": "3.1.6",
     "immutable": "^5.1.9"
   }
 }
