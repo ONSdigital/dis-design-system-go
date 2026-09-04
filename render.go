@@ -13,6 +13,8 @@ import (
 	"github.com/ONSdigital/log.go/v2/log"
 )
 
+const templateKey = "template"
+
 type Render struct {
 	client                               client.Renderer
 	hMutex                               *sync.Mutex
@@ -52,7 +54,7 @@ func NewWithDefaultClient(assetFn func(name string) ([]byte, error), assetNameFn
 func (r *Render) BuildPage(w io.Writer, pageModel interface{}, templateName string) {
 	ctx := context.Background()
 	if err := r.render(w, 200, templateName, pageModel); err != nil {
-		log.Error(ctx, "failed to render template", err, log.Data{"template": templateName})
+		log.Error(ctx, "failed to render template", err, log.Data{templateKey: templateName})
 		if modelErr := r.error(w, 500, model.ErrorResponse{
 			Error: err.Error(),
 		}); modelErr != nil {
@@ -60,7 +62,7 @@ func (r *Render) BuildPage(w io.Writer, pageModel interface{}, templateName stri
 		}
 		return
 	}
-	log.Info(ctx, "rendered template", log.Data{"template": templateName})
+	log.Info(ctx, "rendered template", log.Data{templateKey: templateName})
 }
 
 // BuildErrorPage resolves the rendering of a specific page with a given model and template name
@@ -81,7 +83,7 @@ func (r *Render) BuildErrorPage(w io.Writer, pageModel model.Page, statusCode in
 
 	ctx := context.Background()
 	if err := r.render(w, statusCode, templateName, pageModel); err != nil {
-		log.Error(ctx, "failed to render error template", err, log.Data{"template": templateName})
+		log.Error(ctx, "failed to render error template", err, log.Data{templateKey: templateName})
 		if modelErr := r.error(w, 500, model.ErrorResponse{
 			Error: err.Error(),
 		}); modelErr != nil {
@@ -89,7 +91,7 @@ func (r *Render) BuildErrorPage(w io.Writer, pageModel model.Page, statusCode in
 		}
 		return
 	}
-	log.Info(ctx, "rendered error template", log.Data{"template": templateName})
+	log.Info(ctx, "rendered error template", log.Data{templateKey: templateName})
 }
 
 // NewBasePageModel wraps around the model package's NewPage function, but injects the assets path and site domain from the render struct.

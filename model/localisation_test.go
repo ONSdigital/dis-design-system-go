@@ -9,6 +9,8 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
+const homeLocaleKey = "Home"
+
 func mockAssetFunction(name string) ([]byte, error) {
 	if strings.Contains(name, ".cy.toml") {
 		return []byte("[Home]\none = \"Hafan\"\n"), nil
@@ -21,9 +23,9 @@ func TestLocalise(t *testing.T) {
 
 	Convey("Should localise in the presence of a LocaleKey", t, func() {
 		localisation := model.Localisation{
-			LocaleKey: "Home",
+			LocaleKey: homeLocaleKey,
 			Plural:    1,
-			Text:      "Home",
+			Text:      homeLocaleKey,
 		}
 
 		result := localisation.FuncLocalise("cy")
@@ -33,11 +35,11 @@ func TestLocalise(t *testing.T) {
 
 	Convey("Should default to Text in the absence of a LocaleKey", t, func() {
 		localisation := model.Localisation{
-			Text: "Home",
+			Text: homeLocaleKey,
 		}
 
 		result := localisation.FuncLocalise("cy")
 
-		So(result, ShouldEqual, "Home")
+		So(result, ShouldEqual, homeLocaleKey)
 	})
 }

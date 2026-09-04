@@ -7,6 +7,8 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
+const autocompleteNameStr = "name"
+
 func TestFuncFeedback(t *testing.T) {
 	Convey("Given a page request", t, func() {
 		Convey("When FuncFeedback is called", func() {
@@ -37,20 +39,20 @@ func TestFuncFeedback(t *testing.T) {
 					},
 					NameInput: model.TextField{
 						Input: model.Input{
-							Autocomplete: "name",
+							Autocomplete: autocompleteNameStr,
 							ID:           "name-field",
 							Label: model.Localisation{
 								LocaleKey: "NameOpt",
 								Plural:    1,
 							},
-							Name:     "name",
+							Name:     autocompleteNameStr,
 							Type:     model.Text,
 							Language: p.Language,
 						},
 					},
 					EmailInput: model.TextField{
 						Input: model.Input{
-							Autocomplete: "email",
+							Autocomplete: model.SocialEmailStr,
 							DataAttributes: []model.DataAttribute{
 								{
 									Key: "type-mismatch",
@@ -65,7 +67,7 @@ func TestFuncFeedback(t *testing.T) {
 								LocaleKey: "EmailOpt",
 								Plural:    1,
 							},
-							Name:     "email",
+							Name:     model.SocialEmailStr,
 							Type:     model.Email,
 							Language: p.Language,
 						},

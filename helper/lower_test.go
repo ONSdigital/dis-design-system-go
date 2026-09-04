@@ -7,16 +7,18 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
+const helloWorld = "hello world"
+
 func TestLower(t *testing.T) {
 	cases := []struct {
 		Description string
 		Input       string
 		Expected    string
 	}{
-		{"'HELLO WORLD' should become 'hello world'", "HELLO WORLD", "hello world"},
-		{"'Hello World' should become 'hello world'", "Hello World", "hello world"},
-		{"'hEllO WoRlD' should become 'hello world'", "hEllO WoRlD", "hello world"},
-		{"'hello world' should become 'hello world'", "hello world", "hello world"},
+		{"'HELLO WORLD' should become 'hello world'", "HELLO WORLD", helloWorld},
+		{"'Hello World' should become 'hello world'", "Hello World", helloWorld},
+		{"'hEllO WoRlD' should become 'hello world'", "hEllO WoRlD", helloWorld},
+		{"'hello world' should become 'hello world'", "hello world", helloWorld},
 	}
 
 	for _, test := range cases {

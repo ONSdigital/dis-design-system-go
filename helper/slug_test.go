@@ -13,7 +13,7 @@ func TestSlug(t *testing.T) {
 		Input       string
 		Expected    string
 	}{
-		{"'hello world' should become 'hello-world'", "hello world", "hello-world"},
+		{"'hello world' should become 'hello-world'", helloWorld, "hello-world"},
 		{"'The Quick Brown Fox Jumps Over The Lazy Dog' should become 'the-quick-brown-fox-jumps-over-the-lazy-dog'",
 			"The Quick Brown Fox Jumps Over The Lazy Dog", "the-quick-brown-fox-jumps-over-the-lazy-dog"},
 	}

@@ -8,6 +8,16 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
+const (
+	localeTimestampMonthMay      = "[TimestampMonthMay]"
+	localeTimestampMonthAugust   = "[TimestampMonthAugust]"
+	localeTimestampMonthDecember = "[TimestampMonthDecember]"
+	localeTimestampTwelveHouram  = "[TimestampTwelveHouram]"
+	localeTimestampTwelveHourpm  = "[TimestampTwelveHourpm]"
+	localeOneAm                  = `one = "am"`
+	localeOnePm                  = `one = "pm"`
+)
+
 func TestDateFormat(t *testing.T) {
 	Convey("Date format returns human readable string", t, func() {
 		So(helper.DateFormat("2019-08-15T00:00:00.000Z"), ShouldEqual, "15 August 2019")
@@ -68,29 +78,29 @@ func TestDateFormatYYYYMMDDNoSlash(t *testing.T) {
 }
 
 var cyLocale = []string{
-	"[TimestampMonthMay]",
+	localeTimestampMonthMay,
 	"one = \"Mai\"",
-	"[TimestampMonthAugust]",
+	localeTimestampMonthAugust,
 	"one = \"Awst\"",
-	"[TimestampMonthDecember]",
+	localeTimestampMonthDecember,
 	"one = \"Rhagfyr\"",
-	"[TimestampTwelveHouram]",
-	"one = \"am\"",
-	"[TimestampTwelveHourpm]",
-	"one = \"pm\"",
+	localeTimestampTwelveHouram,
+	localeOneAm,
+	localeTimestampTwelveHourpm,
+	localeOnePm,
 }
 
 var enLocale = []string{
-	"[TimestampMonthMay]",
+	localeTimestampMonthMay,
 	"one = \"May\"",
-	"[TimestampMonthAugust]",
+	localeTimestampMonthAugust,
 	"one = \"August\"",
-	"[TimestampMonthDecember]",
+	localeTimestampMonthDecember,
 	"one = \"December\"",
-	"[TimestampTwelveHouram]",
-	"one = \"am\"",
-	"[TimestampTwelveHourpm]",
-	"one = \"pm\"",
+	localeTimestampTwelveHouram,
+	localeOneAm,
+	localeTimestampTwelveHourpm,
+	localeOnePm,
 }
 
 func mockTimestampAssetFunction(name string) ([]byte, error) {
