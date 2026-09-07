@@ -101,9 +101,9 @@ one = "Changes to business"
 description = "Construction industry"
 one = "Construction industry"
 
-[ITInternetIndustry]
-description = "IT and internet industry"
-one = "IT and internet industry"
+[DigitalEconomy]
+description = "Digital economy"
+one = "Digital economy"
 
 [InternationalTrade]
 description = "International trade"

@@ -108,9 +108,9 @@ one = "Newidiadau i fusnesau"
 description = "Construction industry"
 one = "Diwydiant adeiladu"
 
-[ITInternetIndustry]
-description = "IT and internet industry"
-one = "Y diwydiant TG a'r rhyngrwyd"
+[DigitalEconomy]
+description = "Digital economy"
+one = "Economi ddigidol"
 
 [InternationalTrade]
 description = "International trade"
