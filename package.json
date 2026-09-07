@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/ONSdigital/dis-design-system-go#readme",
   "dependencies": {
+    "@babel/runtime": "^7.29.0",
     "@ons/design-system": "^57.0.1",
     "abortcontroller-polyfill": "^1.7.5",
     "core-js": "^3.49.0",
