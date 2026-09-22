@@ -11,6 +11,14 @@
     {
       "id": "CVE-2026-13149",
       "reason": "A vulnerability of brace expansion which is a sub dependency of lint packages which we are not looking to change. CVE has been noted on project issue and have a backlog ticket created to address this at a later date."
+    },
+    {
+      "id": "CVE-2026-93749",
+      "reason": "A vulnerability of source-map-js which is a sub dependency of Sass, only used during build time and does not affect runtime."
+    },
+    {
+      "id": "CVE-2026-93687",
+      "reason": "A vulnerability of braces which is a sub dependency of micromatch, only used during build. Awaiting patch from braces - DIS-5454"
     }
   ]
 }
