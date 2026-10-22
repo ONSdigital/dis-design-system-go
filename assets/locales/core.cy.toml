@@ -701,6 +701,22 @@ one = "Tabl y gellir sgrolio drwyddo"
 # ERROR PAGES
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+[400Title]
+description = "Sorry, there is a problem"
+one = "Sorry, there is a problem"
+
+[400Description1]
+description = "Your browser sent a request that our server couldn't quite understand. This usually happens because of a typo in the web address or a temporary glitch."
+one = "Your browser sent a request that our server couldn't quite understand. This usually happens because of a typo in the web address or a temporary glitch."
+
+[400Description2]
+description = "If you pasted the web address, check you copied the whole address."
+one = "If you pasted the web address, check you copied the whole address."
+
+[400Description3]
+description = "If the web address is correct, or you selected a link or button, contact us."
+one = "If the web address is correct, or you selected a link or button, <a href=\"/aboutus/contactus/generalandstatisticalenquiries\">contact us</a>."
+
 [401Title]
 description = "Sorry, there is a problem"
 one = "Sorry, there is a problem"

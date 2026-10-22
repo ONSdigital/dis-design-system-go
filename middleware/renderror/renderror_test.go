@@ -25,6 +25,16 @@ func TestRenderr(t *testing.T) {
 			So(mockedRC.BuildHTMLCalls(), ShouldBeEmpty)
 		})
 
+		Convey("when getting a 400 status response ", func() {
+			r, mockedRC := setupTest()
+			req, _ := http.NewRequest("GET", "/badrequest", http.NoBody)
+			w := httptest.NewRecorder()
+			r.ServeHTTP(w, req)
+			So(w.Code, ShouldEqual, 400)
+			So(mockedRC.BuildHTMLCalls(), ShouldHaveLength, 1)
+			So(mockedRC.BuildHTMLCalls()[0].TemplateName, ShouldEqual, "error/400")
+		})
+
 		Convey("when getting a 401 status response ", func() {
 			r, mockedRC := setupTest()
 			req, _ := http.NewRequest("GET", "/unauthorised", http.NoBody)
@@ -77,6 +87,9 @@ func setupTest() (http.Handler, *mocks.RenderClientMock) {
 	testAlice := alice.New(middleware...).Then(router)
 
 	router.HandleFunc("/success", func(w http.ResponseWriter, req *http.Request) {})
+	router.HandleFunc("/badrequest", func(w http.ResponseWriter, req *http.Request) {
+		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
+	})
 	router.HandleFunc("/unauthorised", func(w http.ResponseWriter, req *http.Request) {
 		http.Error(w, http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)
 	})
