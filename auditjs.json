@@ -19,6 +19,10 @@
     {
       "id": "CVE-2026-93687",
       "reason": "A vulnerability of braces which is a sub dependency of micromatch, only used during build. Awaiting patch from braces - DIS-5454"
+    },
+    {
+      "id": "CVE-2026-112366",
+      "reason": "A vulnerability of picomatch we are awaiting a patch"
     }
   ]
 }
