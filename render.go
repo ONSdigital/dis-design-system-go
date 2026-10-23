@@ -71,6 +71,8 @@ func (r *Render) BuildErrorPage(w io.Writer, pageModel model.Page, statusCode in
 	templateName := "error/" + strconv.Itoa(statusCode)
 
 	switch statusCode {
+	case http.StatusBadRequest:
+		pageModel.Error.Title = "Bad request"
 	case http.StatusUnauthorized:
 		pageModel.Error.Title = "Access denied"
 	case http.StatusNotFound:

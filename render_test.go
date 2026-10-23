@@ -14,7 +14,7 @@ import (
 
 func TestRenderPageMethod(t *testing.T) {
 	Convey("Given the renderer is instantiated with a render client", t, func() {
-		mockClient := newMockRenderingClient([]string{"test-article-page", "test-homepage", "error/401", "error/404", "error/500"})
+		mockClient := newMockRenderingClient([]string{"test-article-page", "test-homepage", "error/400", "error/401", "error/404", "error/500"})
 		renderer := render.New(mockClient, "path/to/assets", "site-domain")
 		w := httptest.NewRecorder()
 
@@ -44,6 +44,16 @@ func TestRenderPageMethod(t *testing.T) {
 			mockPage := renderer.NewBasePageModel()
 
 			Convey("Then the render client should set pageModel and call build HTML func", func() {
+				Convey("for 400", func() {
+					renderer.BuildErrorPage(w, mockPage, http.StatusBadRequest)
+					expectedPageModel := mockClient.ValidBuildHTMLMethodCalls[0].PageModel.(model.Page)
+					So(mockClient.ValidBuildHTMLMethodCalls, ShouldHaveLength, 1)
+					So(expectedPageModel.Error.Title, ShouldEqual, "Bad request")
+					So(expectedPageModel.Error.ErrorCode, ShouldEqual, http.StatusBadRequest)
+					So(expectedPageModel.Enable500ErrorPageStyling, ShouldBeFalse)
+					So(mockClient.ValidBuildHTMLMethodCalls[0].TemplateName, ShouldEqual, "error/400")
+					So(mockClient.ValidSetErrorMethodCalls, ShouldEqual, 0)
+				})
 				Convey("for 401", func() {
 					renderer.BuildErrorPage(w, mockPage, http.StatusUnauthorized)
 					expectedPageModel := mockClient.ValidBuildHTMLMethodCalls[0].PageModel.(model.Page)
