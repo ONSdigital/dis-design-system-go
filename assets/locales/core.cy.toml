@@ -68,9 +68,13 @@ one = "English (EN)"
 description = "Release calendar"
 one = "Calendr datganiadau"
 
+[ReleaseCalendarDescription]
+description = "View our latest and upcoming releases."
+one = "Gweld ein datganiadau."
+
 [Media]
 description = "Media"
-one = "Media"
+one = "Cyfryngau"
 
 [About]
 description = "About"
@@ -186,7 +190,7 @@ one = "Pobl, y boblogaeth a chymunedau"
 
 [ArmedForces]
 description = "Armed forces community"
-one = "Armed forces community"
+one = "Cymuned y Lluoedd Arfog"
 
 [BirthsDeathsMarriages]
 description = "Births, deaths and marriages"
@@ -240,6 +244,10 @@ one = "Lles"
 description = "Methodology"
 one = "Methodoleg"
 other = "Methodoleg"
+
+[MethodologyDescription]
+description = "Information on our methods."
+one = "Gwybodaeth am ein dulliau."
 
 [SearchKeywordTimeSeriesID]
 description = "Search for a keyword(s) or time series ID"
@@ -377,6 +385,10 @@ many = "Save changes"
 [SurveyTakingPart]
 description = "Taking part in a survey?"
 one = "Cymryd rhan mewn arolwg?"
+
+[SurveyTakingPartDescription]
+description = "It’s never been more important."
+one = "Nid yw erioed wedi bod mor bwysig."
 
 [CookiesBannerHeading]
 description = "Cookies on ons.gov.uk"

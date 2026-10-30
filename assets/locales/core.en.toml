@@ -61,6 +61,10 @@ one = "English (EN)"
 description = "Release calendar"
 one = "Release calendar"
 
+[ReleaseCalendarDescription]
+description = "View our latest and upcoming releases."
+one = "View our latest and upcoming releases."
+
 [Media]
 description = "Media"
 one = "Media"
@@ -234,6 +238,10 @@ description = "Methodology"
 one = "Methodology"
 other = "Methodology"
 
+[MethodologyDescription]
+description = "Information on our methods."
+one = "Information on our methods."
+
 [SearchKeywordTimeSeriesID]
 description = "Search for a keyword(s) or time series ID"
 one = "Search for a keyword(s) or time series ID"
@@ -367,6 +375,10 @@ other = "Save changes"
 [SurveyTakingPart]
 description = "Taking part in a survey?"
 one = "Taking part in a survey?"
+
+[SurveyTakingPartDescription]
+description = "It’s never been more important."
+one = "It’s never been more important."
 
 [CookiesBannerHeading]
 description = "Cookies on ons.gov.uk"
