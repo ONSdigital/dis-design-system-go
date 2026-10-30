@@ -190,7 +190,7 @@ one = "Pobl, y boblogaeth a chymunedau"
 
 [ArmedForces]
 description = "Armed forces community"
-one = "Cymuned y Lluoedd Arfog."
+one = "Cymuned y Lluoedd Arfog"
 
 [BirthsDeathsMarriages]
 description = "Births, deaths and marriages"
