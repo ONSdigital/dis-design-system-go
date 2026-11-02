@@ -1,6 +1,10 @@
 {
   "ignore": [
     {
+      "id": "CVE-2026-118764",
+      "reason": "Multiple indirect dependencies use minimatch versions below 11.0.1. Forcing an override to >11.0.1 breaks auditjs through glob and ESLint through eslint-plugin-import-x. Backlog ticket (DIS-5665) created to address this at a later date."
+    },
+    {
       "id": "CVE-2026-27904",
       "reason": "A vulnerability of minimatch but is actually resolved in 3.1.5 which is the version we are using, so this is a false positive"
     },
