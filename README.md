@@ -34,7 +34,7 @@ It is recommended that you use [nvm (Node Version Manager)](https://github.com/c
 
 We use `dis-vulncheck` to do auditing, which you will [need to install](https://github.com/ONSdigital/dis-vulncheck).
 
-For Javascript auditing we use `auditjs` which requires you to [setup an OSS Index account](https://github.com/ONSdigital/dp/blob/main/guides/MAC_SETUP.md#oss-index-account-and-configuration)
+For Javascript auditing we use `auditjs` which requires you to [setup an OSS Index account](https://github.com/ONSdigital/dp/blob/main/guides/MAC_SETUP.md#oss-index-account-and-configuration). You will need a personal access token setup to be able to run `make audit`. This should be set to `SONATYPE_GUIDE_TOKEN`
 
 #### Linting
 
